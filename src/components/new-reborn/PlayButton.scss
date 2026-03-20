@@ -1,0 +1,33 @@
+@import "@/app/styles/common/_variables.scss";
+@import "@/app/styles/common/_mixin.scss";
+
+.btn-play {
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: vw(w, 71);
+  height: vw(w, 76);
+  background: url('/workout-v2/images/contents/icon_play_button.png') center center / 100% no-repeat;
+  transition: .3s transform $ease-out-hye;
+  z-index: 1;
+
+  * > &:hover {
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+
+  @include tablet {
+    width: 71px;
+    height: 76px;
+  }
+
+  @include mobile {
+    width: vw(m, 55);
+    height: vw(m, 58);
+  }
+
+}

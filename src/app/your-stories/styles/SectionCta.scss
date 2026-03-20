@@ -1,0 +1,188 @@
+@import "@/app/styles/common/_variables.scss";
+@import "@/app/styles/common/_mixin.scss";
+
+.section-cta{
+    padding: vw(w, 210) 0;
+    background-color: #121212;
+
+    position: relative; //rowan 추가
+    &:after{
+      content: "";
+      background: linear-gradient(to top, #121212, rgba(0, 0, 0, 0));
+      width: 100%;
+      height: 10%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    button {
+        display: flex;
+        align-items: center;
+        gap: vw(w, 100);
+        justify-content: center;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+
+        .cta {
+
+            &_desc {
+                font-size: vw(w, 28);
+                line-height: 1.2;
+                color: #9f9f9f;
+                letter-spacing: -0.05rem;
+                text-align: left;
+
+                p {
+                    font-family: "GowunBatang";
+                    margin-bottom: vw(w, 4);
+                }
+
+                span {
+                    font-size: vw(w, 34);
+                    color: #ddd;
+                    font-weight: 700;
+                    letter-spacing: -0.035em;
+                    
+                    strong {
+
+                    &.blue {
+                        background: linear-gradient(90deg, #fff -20%, #94FFF3 100%);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    }
+                    &.purple {
+                        background: linear-gradient(90deg, #F9F4FF -20%, #B570FF 100%);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    }
+                    &.green {
+                        color: #33FF8F;
+                    }
+                    
+                    }
+                }
+            }
+
+            &_button {
+                position: relative;
+                width: vw(w, 75);
+                height: vw(w, 75);
+                background-color: #ffffff;
+                border-radius: 50%;
+                transition: .2s;
+                transition-delay: 0;
+
+                .arrow {
+                    transition: .3s;
+                    position: absolute;
+                    z-index: 1;
+                    top: 50%;
+                    left: 53%;
+                    width: vw(w, 15);
+                    height: vw(w, 25);
+                    background: url('/workout-v2/images/icons/icon_arrow_black-12x23.png');
+                    background-size: 100% auto;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    transform: translate(-50%, -50%);
+                }
+
+
+            }
+        }
+        
+        &:hover .cta_button {
+            background-color: #bbb;        
+        }
+
+        // &:hover .cta_button .arrow {
+        //     transform: translate(calc(-50% + vw(w, 7)), -50%)
+        // }
+    }
+
+
+    @include tablet {
+        padding: vw(t, 210) 0;
+        
+        button {
+            gap: vw(t, 100);
+
+            .cta {
+
+                &_desc {
+                    font-size: vw(t, 28);
+
+                    p {
+                        margin-bottom: vw(t, 4);
+                    }
+
+                    span {
+                        font-size: vw(t, 34);
+                    }
+                }
+
+                &_button {
+                    width: vw(t, 75);
+                    height: vw(t, 75);
+
+                    .arrow {
+                        width: vw(t, 15);
+                        height: vw(t, 25);
+                    }
+
+                }
+            }
+
+            // &:hover .cta_button .arrow {
+            //     transform: translate(calc(-50% + vw(t, 7)), -50%)
+            // }
+        }
+
+    }
+
+
+    @include mobile {
+        padding: vw(m, 160) vw(m, 42) vw(m, 200);
+
+        button {
+            gap: 0;
+            width: 100%;
+            justify-content: space-between;
+            margin: 0;
+
+            .cta {
+
+                &_desc {
+                    font-size: max(14px, vw(m, 14));
+
+                    p {
+                    margin-bottom: vw(m, 4);
+                    line-height: 1.3;
+                    }
+
+                    span {
+                    font-size: max(16px, vw(m, 16));
+                    }
+                }
+
+                &_button {
+                    width: vw(m, 55);
+                    height: vw(m, 55);
+
+                    .arrow {
+                        width: vw(m, 11);
+                        height: vw(m, 20);
+                    }
+                }
+            }
+
+            // &:hover .cta_button .arrow {
+            //     transform: translate(calc(-50% + vw(m, 5)), -50%)
+            // }
+        }
+
+    }
+
+}

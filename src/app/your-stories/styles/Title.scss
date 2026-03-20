@@ -1,0 +1,14 @@
+@import "@/app/styles/common/_variables.scss";
+@import "@/app/styles/common/_mixin.scss";
+
+.c-title{
+  color: var(--white);
+  .c-title_desc{
+    margin-top: 20px;
+    line-height: 1.3;
+
+    strong {
+      font-weight: 700;
+    }
+  }
+}

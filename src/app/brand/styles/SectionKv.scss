@@ -1,0 +1,136 @@
+@import "@/app/styles/common/_variables.scss";
+@import "@/app/styles/common/_mixin.scss";
+
+.section-kv{
+  position: relative;
+  color: #fff;
+  .section-kv-inner{
+    position: relative;
+  }
+  // .sticky{
+  //   position: sticky;
+  //   top: 0;
+  //   width: 100%;
+  //   // height: 100vh;
+  //   height: 100lvh;
+  //   overflow: hidden;
+  // }
+  &-data-wrapper{
+    text-align: center;
+  }
+  .kv-hero-section{
+    position: relative;
+    height: calc(100vh - 60px);
+    min-height: vw(w, 1050);
+    margin-top: 60px; //gnb 높이
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: vw(w, 73);
+    @include tablet{
+      min-height: vw(t, 850);
+      gap: vw(t, 73);
+    }
+    @include mobile{
+      display: block;
+      height: calc(100vh - 50px);
+      height: calc(100lvh - 50px);
+      min-height: vw(m, 550);
+      margin-top: 50px; //gnb 높이
+    }
+    .kv-title-wrapper{
+      @include mobile{
+        text-align: left;
+        margin-left: vw(m, 30);
+        padding-top: vw(m, 50);
+      }
+      .kv-title-section_desc{
+        margin-top: vw(w, 20);
+        @include tablet{
+          margin-top: vw(t, 20);
+        }
+        @include mobile{
+          margin-top: vw(m, 21);
+        }
+      }
+    }
+    .kv-video-wrapper{
+      position: relative;
+      display: flex;
+      justify-content: center;
+      @include mobile{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+  .bg-image{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100lvh;
+    z-index: -1;
+    &.absolute{
+      position: absolute;
+      bottom: 0;
+      top: auto;
+      height: 100vh;
+      height: 100lvh;
+    }
+    &:before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      transition: background 0.8s ease;
+    }
+    
+    &.dim-opacity:before{
+      background: rgba(0, 0, 0, 0.2);
+    }
+    .images{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .scroll-motion-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    // height: 100%;
+    height: 100svh;
+    z-index: 999;
+    pointer-events: none;
+    &.absolute{
+      position: absolute;
+      bottom: 0;
+      top: auto;
+      height: 100vh;
+      // height: 100svh;
+    }
+    &.fade-out{
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    .kv-scroll{
+      bottom: 8%;
+      right: 4%;
+      z-index: 15;
+      @include tablet{
+        bottom: 8%;
+        right: 2%;
+      }
+      @include mobile{
+        bottom: 10%;
+      }
+    }
+  }
+}

@@ -1,0 +1,299 @@
+@use '@/app/styles/common/variables' as *;
+@use '@/app/styles/common/mixin' as *;  
+
+.insight-swiper{
+  &-container{
+    position: relative;
+    width: 100%;
+    height: vw(w, 518);
+    display: flex;
+    align-items: flex-end;
+    z-index: 1;
+    @include tablet{
+      height: vw(t, 518);
+    }
+    @include mobile{
+      display: block;
+      height: auto;
+    }
+  }
+  &-datas{
+    position: relative;
+    bottom: calc(-1 * vw(w, 108));
+    max-width: vw(w, 1274);
+    width: 100%;
+    padding: 0 vw(w, 40);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    @include tablet{
+      bottom: calc(-1 * vw(t, 108));
+      max-width: vw(t, 1274);
+      padding: 0 vw(t, 40);
+    }
+    @include mobile{
+      display: block;
+      bottom: auto;
+      max-width: none;
+      padding: 0;
+      padding: vw(m, 84) vw(m, 30) vw(m, 50) vw(m, 30);
+    }
+    .c-title{
+      margin-bottom: vw(w, 116);
+      color: #fff;
+      @include tablet{
+        margin-bottom: vw(t, 116);
+      }
+      @include mobile{
+        margin-bottom: vw(m, 21);
+      }
+      &_title h3{
+        @include mobile{
+          font-size: vw(m, 36);
+        }
+      }
+      &_desc{
+        @include mobile{
+          display: none;
+        }
+      }
+      &_badge{
+        border-color: #fff;
+        @include mobile{
+          font-size: vw(m, 14);
+        }
+      }
+    }
+  }
+  &-wrapper{
+    width: vw(w, 322);
+    height: vw(w, 483);
+    margin-right: vw(w, 98);
+    @include tablet{
+      width: vw(t, 322);
+      height: vw(t, 483);
+      margin-right: vw(t, 98);
+    }
+    @include mobile{
+      width: 100%;
+      height: auto;
+      margin-right: 0;
+    }
+    .insight-swiper{
+      position: relative;
+      box-shadow: 15px 22px 27px 0px rgba(0, 0, 0, 0.37);
+      .swiper-slide{
+        .fade{
+          opacity: 0;
+          transition: opacity 1s 0.8s ease;
+        }
+      }
+      .swiper-slide-active{
+        .fade{opacity: 1;}
+      }
+      @include mobile{
+        box-shadow: none;
+        margin-top: vw(m, 78);
+      }
+      &-item{
+        &-title{
+          position: absolute;
+          width: 100%;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: #fff;
+          text-align: center;
+          padding: vw(w, 20);
+          @include tablet{
+            padding: vw(t, 20);
+          }
+          @include mobile{
+            padding: vw(m, 20);
+          }
+          .title{
+            font-family: $font-g;
+            font-size: vw(w, 31);
+            line-height: 1.2;
+            @include tablet{
+              font-size: vw(t, 31);
+            }
+            @include mobile{
+              font-size: vw(m, 31);
+            }
+          }
+          .desc{
+            width: vw(w, 152);
+            margin: 0 auto;
+            margin-top: vw(w, 10);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            white-space: pre-line;
+            @include tablet{
+              width: vw(t, 152);
+              margin-top: vw(t, 10);
+            }
+            @include mobile{
+              width: vw(m, 152);
+              font-size: vw(m, 12);
+              margin-top: vw(m, 10);
+            }
+          }
+          .date{
+            margin-top: vw(w, 20);
+            @include tablet{
+              margin-top: vw(t, 20);
+            }
+            @include mobile{
+              font-size: vw(m, 12);
+              margin-top: vw(m, 20);
+            }
+          }
+        }
+        &-user{
+          position: absolute;
+          color: #fff;
+          left: 50%;
+          bottom: vw(w, 20);
+          transform: translateX(-50%);
+          text-align: center;
+          @include tablet{
+            bottom: vw(t, 20);
+          }
+          @include mobile{
+            bottom: vw(m, 40);
+          }
+          .user-image{
+            width: vw(w, 54);
+            height: vw(w, 54);
+            @include tablet{
+              width: vw(t, 54);
+              height: vw(t, 54);
+            }
+            @include mobile{
+              width: vw(m, 54);
+              height: vw(m, 54);
+            }
+          }
+          .user{
+            margin-top: vw(w, 20);
+            @include tablet{
+              margin-top: vw(t, 20);
+            }
+            @include mobile{
+              margin-top: vw(m, 10);
+            }
+          }
+        }
+        &-image{
+          width: vw(w, 322);
+          height: vw(w, 483);
+          box-shadow: 15px 22px 27px 0px rgba(0, 0, 0, 0.37);
+          @include tablet{
+            width: vw(t, 322);
+            height: vw(t, 483);
+          }
+          @include mobile{
+            width: 100%;
+            height: auto;
+            box-shadow: none;
+          }
+        }
+      }
+    }
+  }
+  &-background{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    @include mobile{
+      position: static;
+    }
+    &_number-text{
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: vw(w, 20);
+      color: #fff;
+      @include tablet{
+        margin-bottom: vw(t, 20);
+      }
+      @include mobile{
+        margin-bottom: 0;
+        bottom: auto;
+        left: 0;
+        top: vw(m, 178);
+      }
+      .line{
+        width: calc(50% - vw(w, 120));
+        height: 1px;
+        background-color: #fff;
+        @include tablet{
+          width: 41%;
+        }
+        @include mobile{
+          height: vw(m, 1);
+          &-01{
+            width: 10%;
+          }
+          &-02{
+            width: 40%;
+          }
+        }
+      }
+      .text{
+        font-family: $font-g;
+        font-size: vw(w, 22);
+        font-weight: 400;
+        line-height: 1.2;
+        & > span{
+          opacity: 0.15;
+          transition: opacity 0.3s ease;
+          margin: 0 5px;
+          &:last-child{
+            margin-right: 0;
+          }
+          &.active{
+            opacity: 1;
+          }
+        }
+        @include tablet{
+          font-size: vw(t, 22);
+        }
+        @include mobile{
+          font-size: vw(m, 22);
+        }
+      }
+    }
+    &_image{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      .fade-image-container{
+        width: 100%;
+        height: 100%;
+      }
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .fade-image{
+        transition: opacity 0.3s ease-in-out;
+      }
+    }
+  }
+}

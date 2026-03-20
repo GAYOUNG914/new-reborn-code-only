@@ -1,0 +1,31 @@
+@use '@/app/styles/common/variables' as *;
+@use '@/app/styles/common/mixin' as *;
+
+.section-cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: vw(w, 320) vw(w, 30);
+  text-align: center;
+  @include tablet {
+    padding: vw(t, 320) vw(t, 30);
+  }
+  @include mobile {
+    padding: vw(m, 250) vw(m, 30);
+  }
+  &-title{
+    font-family: $font-g;
+    font-size: vw(w, 28);
+    line-height: 1.4;
+    margin-bottom: vw(w, 30);
+    @include tablet {
+      font-size: vw(t, 28);
+      margin-bottom: vw(t, 30);
+    }
+    @include mobile {
+      font-size: vw(m, 18);
+      margin-bottom: vw(m, 20);
+    }
+  }
+}

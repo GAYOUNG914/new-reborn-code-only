@@ -1,0 +1,295 @@
+@import "@/app/styles/common/_variables.scss";
+@import "@/app/styles/common/_mixin.scss";
+
+.section-vlog {
+
+    // position: relative;
+    padding: vw(w, 173) 0 0;
+    overflow: visible;
+    z-index: 1;
+
+    .vlog-card {
+        position: relative;
+        max-width: vw(w, 1120);
+        border-radius: vw(w, 30);
+        padding: vw(w, 180) vw(w, 70) vw(w, 120);
+        margin: vw(w, 80) auto;
+        box-shadow: vw(w, 6) vw(w, 9) vw(w, 28) rgba(59, 52, 134, 0.25);
+        overflow: hidden;
+        z-index: 1;
+
+        &_cover {
+            position: absolute;
+            top: 0;
+            right: 0;
+        
+            img {
+                object-fit: cover;
+            }
+        }
+
+        &_contents {
+            position: relative;
+            z-index: 1;
+        
+            &-head {
+                color: white;
+                line-height: 1.2;
+
+                span {
+                    font-size: vw(w, 60);
+                    font-weight: 700;
+                }
+
+                p {
+                    font-size: vw(w, 24);
+                    margin-top: vw(w, 20);
+                }
+            }
+
+            &-body {
+                margin: vw(w, 80) 0 vw(w, 60);
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: vw(w, 40);
+
+                    .img-wrap {
+                        position: relative;
+                        width: vw(w, 300);
+                        height: vw(w, 450);
+                        border-radius: vw(w, 20);
+                        overflow: hidden;
+                        cursor: pointer;
+                        
+                        img {
+                            transition: 1s transform $ease-out-hye;
+                        }
+
+                        iframe {
+                            width: 100%;
+                            height: 100%;
+                        }
+
+                        .vlog-video {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            pointer-events: none;
+                            overflow: hidden;
+                            
+                            .yt-wrapper {
+                                overflow: hidden;
+                                max-width: 100%;
+                                height: 100%;
+                            }
+
+                            .yt-frame-container {
+                                position: relative;
+                                padding-bottom: 56.25%; 
+                                padding-top: 25px;
+                                width: 300%;
+                                left: -100%;
+                                height: 100%;
+
+                                iframe {
+                                    position: absolute; 
+                                    top: 0; 
+                                    left: 0; 
+                                    width: 100%; 
+                                    height: 100%;
+                                    pointer-events:none;
+                                    height: 100%;
+                                    transform: scale(1.3) translateY(-10%);
+                                }
+                            }
+                        }
+
+                        &:hover {
+                            img {
+                                transform: scale(1.15);
+                            }
+                        }
+                    }
+
+                    p {
+                        font-size: vw(w, 24);
+                        line-height: 1.2;
+                        font-weight: 700;
+                        margin-top: vw(w, 20);
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                    }
+
+                  
+            }
+        }
+
+
+        &.work {
+            background: linear-gradient(to bottom, rgba(25, 107, 224, 0.6), rgba(66, 148, 255, 0.43));
+
+            .vlog-card_cover {
+                width: vw(w, 894);
+                height: vw(w, 260);
+            }
+        }
+
+        &.culture {
+            background: linear-gradient(to bottom, rgba(60, 125, 103, 1), rgba(25, 174, 137, 0.5));
+
+            .vlog-card_cover {
+                width: vw(w, 588);
+                height: vw(w, 378);     
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: vw(w, 1000);
+                height: vw(w, 1000);
+                background: radial-gradient(#CDE49B 0%, rgba(255,255,255,0) 70%);
+                transform: translate(45%, -45%);
+            }
+        }
+    }
+           
+
+    @include tablet {
+
+        padding: vw(t, 173) 0 0;
+
+        .vlog-card {
+            max-width: vw(t, 1120);
+            border-radius: vw(t, 30);
+            padding: vw(t, 180) vw(t, 70) vw(t, 120);
+            margin: vw(t, 80) auto;
+            box-shadow: vw(t, 6) vw(t, 9) vw(t, 28) rgba(59, 52, 134, 0.25);
+
+            &_contents {
+            
+                &-head {
+                    span {
+                        font-size: 60px;
+                    }
+
+                    p {
+                        font-size: 24px;
+                        margin-top: vw(t, 20);
+                    }
+                }
+
+                &-body {
+                    margin: vw(t, 80) 0 vw(t, 60);
+                    gap: vw(t, 40);
+
+                        .img-wrap {
+                            width: vw(t, 300);
+                            height: vw(t, 450);
+                            border-radius: vw(t, 20);
+                        }
+
+                        p {
+                            font-size: 20px;
+                            margin-top: vw(t, 20);
+                        }
+
+                }
+
+            }
+
+
+            &.work {
+                .vlog-card_cover {
+                    width: vw(t, 894);
+                    height: vw(t, 260);
+                }
+            }
+
+            &.culture {
+                .vlog-card_cover {
+                    width: vw(t, 588);
+                    height: vw(t, 378);     
+                }
+
+                &::before {
+                    width: vw(t, 1000);
+                    height: vw(t, 1000);
+                }
+            }
+
+        }
+    }
+
+
+    @include mobile {
+        padding: vw(m, 100) vw(m, 10) 0;
+
+        .vlog-card {
+            max-width: none;
+            border-radius: vw(m, 20);
+            padding: vw(m, 140) vw(m, 17) vw(m, 78);
+            margin: vw(m, 40) auto;
+            box-shadow: vw(m, 6) vw(m, 9) vw(m, 28) rgba(59, 52, 134, 0.25);
+
+            &_contents {
+            
+                &-head {
+                    span {
+                        font-size: max(34px, vw(m, 34));
+                    }
+                    p {
+                        font-size: max(14px, vw(w, 14));
+                        margin-top: vw(m, 12);
+                    }
+                }
+
+                &-body {
+                    margin: vw(m, 28) 0 vw(m, 60);
+                    grid-template-columns: 1fr 1fr;
+                    gap: vw(m, 60) vw(m, 12);
+
+                        .img-wrap {
+                            width: 100%;
+                            height: vw(m, 243);
+                            border-radius: vw(m, 10);
+                        }
+
+                        p {
+                            font-size: max(14px, vw(m, 14));
+                            margin-top: vw(m, 12);
+                        }
+
+                }
+
+            }
+
+
+            &.work {
+                .vlog-card_cover {
+                    width: vw(m, 374);
+                    height: vw(m, 181);
+                }
+            }
+
+            &.culture {
+
+                .vlog-card_cover {
+                    width: vw(m, 265);
+                    height: vw(m, 194);     
+                }
+
+                &::before {
+                    width: vw(m, 500);
+                    height: vw(m, 500);
+                }
+            }
+
+        }
+    }
+}

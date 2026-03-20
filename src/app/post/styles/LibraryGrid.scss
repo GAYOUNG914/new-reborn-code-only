@@ -1,0 +1,172 @@
+@use '@/app/styles/common/variables' as *;
+@use '@/app/styles/common/mixin' as *;
+
+.library-grid {
+  width: 100%;
+  padding-top: vw(w, 120);
+  background-color: #222;
+  @include tablet {
+    padding-top: vw(t, 120);
+  }
+  @include mobile {
+    padding-top: vw(m, 100);
+  }
+  
+  .library-grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: vw(w, 60);
+    max-width: vw(w, 1274);
+    padding: 0 vw(w, 40);
+    margin: 0 auto;
+    @include tablet {
+      gap: vw(t, 60);
+      max-width: vw(t, 1274);
+      padding: 0 vw(t, 40);
+    }
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: vw(m, 56);
+      padding: 0 vw(m, 40);
+    }
+  }
+  
+  .book-item {
+    display: flex;
+    gap: vw(w, 40);
+    @include tablet {
+      gap: vw(t, 40);
+    }
+    @include mobile {
+      gap: vw(m, 36);
+    }
+
+    &_cover {
+      flex-shrink: 0;
+      .cover-image {
+        width: vw(w, 135);
+        height: vw(w, 200);
+        object-fit: cover;
+        border-radius: vw(w, 4);
+        box-shadow: 6.14px 7.67px 16.88px 0px #00000099;
+        @include tablet {
+          width: vw(t, 135);
+          height: vw(t, 200);
+          border-radius: vw(t, 4);
+        }
+        @include mobile {
+          width: vw(m, 90);
+          height: vw(m, 133);
+          border-radius: vw(m, 3);
+        }
+      }
+    }
+    
+    &_info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      text-align: left;
+      color: #fff;
+      
+      &_title {
+        font-size: vw(w, 32);
+        font-weight: 700;
+        margin-bottom: vw(w, 6);
+        display: flex;
+        align-items: center;
+        gap: vw(w, 6);
+        span{
+          display: -webkit-box;
+          max-width: vw(w, 250);
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          @include tablet {
+            max-width: vw(t, 250);
+          }
+          @include mobile {
+            max-width: vw(m, 150);
+          }
+        }
+        @include tablet {
+          font-size: vw(t, 32);
+          margin-bottom: vw(t, 6);
+          gap: vw(t, 6);
+        }
+        @include mobile {
+          font-size: vw(m, 21);
+          margin-bottom: vw(m, 4);
+          gap: vw(m, 4);
+        }
+        
+        .new-badge {
+          color: #FFCF21;
+          font-size: vw(w, 15);
+          font-weight: 700;
+          padding: vw(w, 3) vw(w, 8);
+          border-radius: vw(w, 60);
+          border: 1px solid #FFCF21;
+          flex-shrink: 0;
+          @include tablet {
+            font-size: vw(t, 15);
+            padding: vw(t, 3) vw(t, 8);
+            border-radius: vw(t, 60);
+          }
+          @include mobile {
+            font-size: vw(m, 10);
+            padding: vw(m, 2) vw(m, 5);
+            border-radius: vw(m, 40);
+          }
+        }
+      }
+      
+      &_publisher {
+        font-size: vw(w, 15);
+        color: #aaa;
+        margin-bottom: vw(w, 60);
+        @include tablet {
+          font-size: vw(t, 15);
+          margin-bottom: vw(t, 60);
+        }
+        @include mobile {
+          font-size: vw(m, 10);
+          margin-bottom: vw(m, 40);
+        }
+      }
+      
+      &_description {
+        display: flex;
+        align-self: flex-start;
+        font-size: vw(w, 21);
+        color: #fff;
+        line-height: 1.2;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        @include tablet {
+          font-size: vw(t, 21);
+        }
+        @include mobile {
+          font-size: vw(m, 14);
+          -webkit-line-clamp: 3;
+        }
+      }
+    }
+  }
+
+  .btn-readmore {
+    margin-top: vw(w, 60);
+    @include tablet {
+      margin-top: vw(t, 60);
+    }
+    @include mobile {
+      margin-top: vw(m, 60);
+    }
+  }
+}

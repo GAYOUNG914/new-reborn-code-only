@@ -1,0 +1,404 @@
+@import "@/app/styles/common/_variables.scss";
+@import "@/app/styles/common/_mixin.scss";
+
+.section-shape-swiper {
+
+  position: relative;
+  width: 100%;
+  height: 300vh;
+  // height: 200dvh;
+  height: 300lvh;
+  
+  // 여러 인스턴스 충돌 방지
+  isolation: isolate;
+
+  &-inner {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    // height: 100dvh;
+    height: 100lvh;
+    overflow: hidden;
+
+    .text-wrap {
+      position: sticky;
+      top: 60%;
+      left: 0%;
+      transform: translate(0%, -50%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      z-index: 1;
+      color: #fff;
+      width: vw(w, 1120);
+      margin: 0 auto;
+      padding-left: vw(w, 116);
+      
+      // GPU 가속 (fade 애니메이션용)
+      will-change: opacity;
+
+          .title {
+            font-size: vw(w, 36);
+            font-weight: 700;
+            line-height: 1.2;
+          }
+
+          .sub-title {
+            font-size: vw(w, 21);
+            font-weight: 400;
+            line-height: 1.2;
+            opacity: 0.4;
+            margin-top: vw(w, 4);
+          }
+
+          .desc {
+            font-size: vw(w, 21);
+            font-weight: 400;
+            line-height: 1.5;
+            margin-top: vw(w, 20);
+          }
+    }
+
+    .b-c_head {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      height: 100vh;
+      // height: 100dvh;
+      height: 100lvh;
+      text-align: center;
+      color: #fff;
+      transform: translateX(-50%);
+
+      &-inner {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        padding-top: vw(w, 180);
+      }
+    }
+
+    .b-c_body {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100vh;
+      // height: 100dvh;
+      height: 100lvh;
+      overflow: hidden;
+      color: #fff;
+      z-index: 1;
+
+      &-inner {
+        will-change: transform;
+        height: 300%;
+        display: flex;
+        flex-direction: column;
+        // transition 제거 - GSAP ScrollTrigger가 완전히 제어하도록
+      }
+
+      .b-c_item {
+        width: 100%;
+        height: 100vh;
+        // height: 100dvh;
+        height: 100lvh;
+        position: relative;
+
+        img {
+          position: absolute;
+          right: 20%;
+          top: 60%;
+          transform: translateY(-50%);
+        }
+
+        &:nth-child(1) img {
+            width: vw(w, 840);
+            height: vw(w, 540);
+            transform: translate(30%, -50%);
+        }
+        &:nth-child(2) img {
+            right: 25%;
+            width: vw(w, 200);
+            height: vw(w, 280);
+        }
+        &:nth-child(3) img {
+            width: vw(w, 280);
+            height: vw(w, 320);
+        }
+      }
+    }
+
+    .b-c_box {
+      width: vw(w, 1120);
+      height: vw(w, 561);
+      box-shadow: vw(w, 8) vw(w, 13) vw(w, 54) rgba(0, 0, 0, 0.25);
+      background-color: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(25px);
+      border-radius: vw(w, 10);
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 0.3px solid rgba(255, 255, 255, 0.5);
+      transition: opacity .5s;
+      
+      // GPU 가속 최적화
+      will-change: opacity;
+      
+      &.hide {
+        opacity: 0;
+      }
+    }
+
+    .b-c_pagination {
+      position: absolute;
+      right: 5%;
+      top: 60%;
+      transform: translateY(-50%);
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: vw(w, 11);
+
+        li {
+          display: inline-block;
+          width: vw(w, 11);
+          height: vw(w, 11);
+          border-radius: 50%;
+          background-color: #fff;
+          opacity: 0.5;
+
+          &.active {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  .shape {
+    position: absolute;
+    z-index: -1;
+  }
+
+
+  @include tablet {
+
+    &-inner {
+
+      .b-c_head {
+
+        &-inner {
+          padding-top: vw(t, 180);
+        }
+      }
+
+      .text-wrap {
+        padding-left: vw(t, 100);
+        width: vw(t, 1120);
+
+        .title {
+          font-size: vw(t, 36);
+        }
+      
+        .sub-title {
+          font-size: vw(t, 21);
+          margin-top: vw(t, 4);
+        }
+      
+        .desc {
+          font-size: vw(t, 21);
+          margin-top: vw(t, 20);
+        }
+      
+        img {
+          transform: translate(-50%, -50%);
+        }
+      }
+
+
+      .b-c_body {
+
+        .b-c_item {
+          &-inner {
+            width: calc(vw(t, 1120) - vw(t, 232));
+            height: 100%;
+            margin-top: vw(t, 130);
+          }
+
+          &:nth-child(1) img {
+            right: 10%;
+            width: vw(t, 600);
+            height: vw(t, 400);
+            transform: translate(5%, -50%);
+          }
+          &:nth-child(2) img {
+            right: 25%;
+            width: vw(t, 200);
+            height: vw(t, 280);
+          }
+          &:nth-child(3) img {
+            right: 16%;
+            width: vw(t, 280);
+            height: vw(t, 320);
+            transform: translate(-20%, -50%);
+          }
+        }
+      }
+
+      .b-c_box {
+        width: vw(t, 1120);
+        height: vw(t, 561);
+        box-shadow: vw(t, 8) vw(t, 13) vw(t, 54) rgba(0, 0, 0, 0.25);
+        border-radius: vw(t, 10);
+      }
+
+      .b-c_pagination {
+
+        ul {
+          display: flex;
+          flex-direction: column;
+          gap: vw(t, 11);
+
+          li {
+            display: inline-block;
+            width: vw(t, 11);
+            height: vw(t, 11);
+            border-radius: 50%;
+            background-color: #fff;
+            opacity: 0.5;
+
+            &.active {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include mobile {
+    // 모바일: 직접 슬라이드 제어, 적당한 스크롤 영역 제공
+    height: 400vh;
+    height: 400lvh;
+
+    // 모바일 스크롤 최적화
+    -webkit-overflow-scrolling: auto;
+    overscroll-behavior-y: contain;
+    touch-action: pan-y;
+    
+    // iOS: 한 슬라이드에 더 오래 머물도록 높이 증가
+    @supports (-webkit-touch-callout: none) {
+      height: 500vh;
+      height: 500lvh;
+    }
+
+    &-inner {
+
+      .b-c_head {
+        &-inner {
+          padding-top: vw(m, 100);
+        }
+      }
+
+
+      .text-wrap {
+        align-items: center;
+        text-align: center;
+        margin-left: 0;
+        top: 75%;
+
+        .title {
+              font-size: max(20px, vw(m, 20));
+            }
+            .sub-title {
+              font-size: max(14px, vw(m, 14));
+              margin-top: vw(m, 8);
+            }
+            .desc {
+              font-size:max(14px, vw(m, 14));
+              margin-top: vw(m, 30);
+        }
+      }
+
+
+      .b-c_body {
+
+        .b-c_item {
+
+          align-items: center;
+          justify-content: center;
+
+          &-inner {
+            width: 100%;
+            height: vw(m, 524);
+            margin-top: 0;
+            text-align: center;
+            top: 50%;
+            transform: translateY(-10%);
+
+            img {
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
+          }
+
+          &:nth-child(1) img {
+              top: 46%;
+              width: vw(m, 400);
+              height: vw(m, 400);
+              left: 50%;
+              transform: translate(-50%, -50%);
+          }
+          &:nth-child(2) img {
+              top: 50%;
+              width: vw(m, 170);
+              height: vw(m, 250);
+              left: 50%;
+              transform: translate(-50%, -50%);
+          }
+          &:nth-child(3) img {
+              top: 50%;
+              width: vw(m, 220);
+              height: vw(m, 250);
+              left: 50%;
+              transform: translate(-50%, -50%);
+          }
+        }
+      }
+
+      .b-c_box {
+        width: calc(100vw - vw(m, 40));
+        height: 60%;
+        box-shadow: vw(m, 8) vw(m, 13) vw(m, 54) rgba(0, 0, 0, 0.25);
+        border-radius: vw(m, 10);
+        top: vw(m, 210);
+        left: 50%;
+        transform: translate(-50%, 0%);
+      }
+
+      .b-c_pagination {
+        right: auto;
+        top: auto;
+        bottom: 5%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        ul {
+          flex-direction: row;
+          gap: vw(m, 11);
+
+          li {
+            width: vw(m, 11);
+            height: vw(m, 11);
+          }
+        }
+      }
+    }
+  }
+
+
+}

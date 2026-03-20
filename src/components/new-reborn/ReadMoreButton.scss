@@ -1,0 +1,156 @@
+@import "@/app/styles/common/_variables.scss";
+@import "@/app/styles/common/_mixin.scss";
+
+.btn-readmore {
+
+  background-color: #333;
+  border-radius: vw(w, 40);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: vw(w, 11);
+  margin: 0 auto;
+  padding: vw(w, 17) vw(w, 43);
+  transition: .3s background-color;
+  
+  .text {
+    font-size: vw(w, 21);
+    font-weight: 700;
+    line-height: 1.2; 
+    letter-spacing: -0.05em;
+    white-space: nowrap;
+    color: #fff;
+  }
+  
+  .icon {
+    display: inline-block;
+    width: vw(w, 15);
+    height: vw(w, 7);
+    background: url('/workout-v2/images/icons/icon_arrow-down-white.svg');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: .4s transform $ease-out-expo;
+  }
+
+  // &:hover {
+  //   background-color: #252525;
+
+  //   .icon {
+  //     transform: translateY(50%);
+  //   }
+  // }
+
+
+  // 색상 타입
+  &.c {
+    
+    &-black {
+      background-color: #333333;
+
+      &:hover {
+        background-color: #252525;
+      }
+    }
+
+    &-gray {
+      background-color: #555555;
+
+      &:hover {
+        background-color: #353535;
+      }
+    }
+        
+    &-border-w {
+      background-color: rgba(255, 255, 255, 0);
+      border: 1px solid #ffffff;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+    }
+
+    &-border-b {
+      background-color: rgba(0, 0, 0, 0);
+      border: 1px solid #333333;
+
+      .text {
+        color: #333333;
+      }
+      .icon {
+        filter: invert(1);
+      }
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+    }
+
+  }
+
+  // 화살표 방향
+  &.d {
+
+    &-down {
+      .icon {
+        transform: rotate(0);
+      }
+      // &:hover .icon {
+      //   transform: translateY(50%);
+      // }
+    }
+
+    &-right {
+      .icon {
+        transform: rotate(-90deg);
+      }
+      // &:hover .icon {
+      //   transform: rotate(-90deg) translateY(50%);
+      // }
+    }
+
+    &-top {
+      .icon {
+        transform: rotate(-180deg);
+      }
+      // &:hover .icon {
+      //   transform: rotate(-180deg) translateY(50%);
+      // }
+    }
+  }
+
+
+  @include tablet {
+    border-radius: vw(t, 40);
+    padding: vw(t, 17) vw(t, 43);
+    gap: vw(t, 11);
+
+    .text {
+      font-size: vw(t, 21);
+    }
+
+    .icon {
+      width: vw(t, 15);
+      height: vw(t, 7);
+    }
+
+  }
+
+
+  @include mobile {
+    border-radius: vw(m, 40);
+    padding: vw(m, 12) vw(m, 27);
+    gap: vw(m, 8);
+
+    .text {
+      font-size: max(14px, vw(m, 14));
+    }
+
+    .icon {
+      width: vw(m, 10);
+      height: vw(m, 5);
+    }
+
+  }
+
+}

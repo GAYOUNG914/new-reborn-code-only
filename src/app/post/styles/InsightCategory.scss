@@ -1,0 +1,104 @@
+@use '@/app/styles/common/variables' as *;
+@use '@/app/styles/common/mixin' as *;  
+
+
+.insight-category{
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  gap: vw(w, 17);
+  max-width: vw(w, 1274);
+  padding: 0 vw(w, 40);
+  padding-bottom: vw(w, 50);
+  margin: 0 auto;
+  margin-top: vw(w, 168);
+  box-sizing: content-box;
+  &::-webkit-scrollbar{
+    display: none;
+  }
+  @include tablet{
+    gap: vw(t, 17);
+    max-width: vw(t, 1274);
+    margin-top: vw(t, 168);
+    padding: 0 vw(t, 40);
+    padding-bottom: vw(t, 50);
+  }
+  @include mobile{
+    gap: vw(m, 10);
+    max-width: none;
+    margin-top: vw(m, 80);
+    padding: 0;
+    padding-bottom: vw(m, 48);
+  }
+  &-button{
+    padding: vw(w, 5) vw(w, 24);
+    border-radius: vw(w, 88);
+    background-color: #e8e8e8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.5;
+    flex: none;
+    // &:first-child{
+    //   margin-left: vw(w, 40);
+    // }
+    // &:last-child{
+    //   margin-right: vw(w, 40);
+    // }
+    @include tablet{
+      padding: vw(t, 5) vw(t, 24);
+      border-radius: vw(t, 88);
+      // &:first-child{
+      //   margin-left: vw(t, 40);
+      // }
+      // &:last-child{
+      //   margin-right: vw(t, 40);
+      // }
+    }
+    @include mobile{
+      padding: vw(m, 4) vw(m, 14);
+      border-radius: vw(m, 50);
+      &:first-child{
+        margin-left: vw(m, 30);
+      }
+      &:last-child{
+        margin-right: vw(m, 30);
+      }
+    }
+    &.on{
+      box-shadow: 0px 14.18px 26.76px 0px rgba(153, 167, 178, 0.35);
+      background-color: var(--black02);
+      opacity: 1;
+      .insight-category-button_text {
+        color: var(--gray02);
+      }
+      // &_icon{
+      //   opacity: 1;
+      // }
+      @include mobile{
+        box-shadow: 0px 8px 15px 0px rgba(153, 167, 178, 0.35);
+      }
+    }
+    &_text{
+      // color: var(--gray02);
+      color: #000;
+      font-size: vw(w, 21);
+      line-height: 1.2;
+      font-weight: 700;
+      vertical-align: middle;
+      @include tablet{
+        font-size: vw(t, 21);
+      }
+      @include mobile{
+        font-size: vw(m, 14);
+      }
+    }
+    // &_icon{
+    //   vertical-align: middle;
+    //   margin-left: vw(w, 4);
+    //   width: vw(w, 25);
+    //   height: vw(w, 25);
+    //   opacity: 0.5;
+    // }
+  }
+}

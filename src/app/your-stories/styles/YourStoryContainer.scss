@@ -1,0 +1,23 @@
+@import "@/app/styles/common/_variables.scss";
+@import "@/app/styles/common/_mixin.scss";
+
+.your-stories{
+  background-color: #121212;
+  .contents-wrap{
+    padding: vw(w, 100) vw(w, 200);
+    @include tablet{
+      padding: vw(t, 100) vw(t, 100);
+    }
+    @include mobile{
+      padding: 60px 20px;
+    }
+  }
+
+}
+
+.banner-first{
+  &:has(button.aos-animate) ~ .section-reterview .reterview-bg-image02 {
+    opacity: 1;
+    transition: opacity 0.8s 0.6s ease;
+  }
+}

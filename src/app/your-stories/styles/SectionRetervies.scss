@@ -1,0 +1,254 @@
+@import "@/app/styles/common/_variables.scss";
+@import "@/app/styles/common/_mixin.scss";
+
+
+.section-reterview{
+  position: relative;
+  background-color: #121212;
+  margin-top: calc(vw(w, 54) * -1);
+  @include tablet{
+    margin-top: calc(vw(t, 54) * -1);
+  }
+  @include mobile{
+    margin-top: 0;
+  }
+  &:after{
+    content: "";
+    background: linear-gradient(to top, #121212, rgba(0, 0, 0, 0));
+    width: 100%;
+    height: 10%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  .reterview-bg-image02{
+    position: absolute;
+    width: 100%;
+    height: 220%;
+    top: -110%;
+    left: 0;
+    z-index: 0; 
+    opacity: 0;
+    transition: opacity 0.3s ease; 
+    will-change: opacity;
+    background: url('/workout-v2/images/contents/ys_bg_blur-02.webp') no-repeat top / cover;
+  }
+  .contents-wrap{
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: vw(w, 130) vw(w, 40);
+    box-sizing: content-box;
+    position: relative;
+    z-index: 1; // 배경 이미지 위에 표시
+    @include tablet{
+      padding: vw(t, 130) vw(t, 40);
+    }
+    @include mobile{
+      padding: vw(m, 105) vw(m, 20) vw(m, 40);
+      padding-bottom: 0;
+      margin-top: vw(m, 66);
+    }
+  }
+  .contents-inner{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    @include mobile{
+      flex-direction: column;
+    }
+  }
+  .c-title{
+    .c-title_title{
+      display: flex;
+      align-items: center;
+      gap: vw(w, 20);
+      @include tablet{
+        gap: vw(t, 20);
+      }
+      @include mobile{
+        gap: 10px;
+      }
+    }
+    .badge{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: vw(w, 10);
+      padding: vw(w, 3) vw(w, 10);
+      border-radius: vw(w, 30);
+      border: 1px solid var(--white);
+      @include tablet{
+        padding: vw(t, 3) vw(t, 10);
+        border-radius: vw(t, 30);
+      }
+      @include mobile{
+        padding: 3px 10px;
+        border-radius: 30px;
+      }
+      span{
+        display: block;
+        font-size: vw(w, 21);
+        line-height: 1.2;
+        font-weight: 700;
+        @include tablet{
+          font-size: vw(t, 21);
+        }
+        @include mobile{
+          font-size: 12px;
+        }
+      }
+      .tooltip-wrapper{
+        .icon{
+          width: vw(w, 18);
+          height: vw(w, 18);
+          background: url('/workout-v2/images/icons/icon_tooltip-w.svg') no-repeat center / contain;
+          @include tablet{
+            width: vw(t, 18);
+            height: vw(t, 18);
+          }
+          @include mobile{
+            width: vw(m, 13);
+            height: vw(m, 13);
+          }
+
+          &:before,&:after{
+            content: none;
+          }
+        }
+        .tooltip{
+          width: vw(w, 242);
+          height: vw(w, 60);
+          top: calc(-1 * vw(w, 14));
+          left: vw(w, 40);
+          background: url('/workout-v2/images/contents/tooltip_bg.png') no-repeat center / contain;
+          @include tablet{
+            width: vw(t, 242);
+            height: vw(t, 60);
+            top: calc(-1 * vw(t, 14));
+            left: vw(t, 40);
+          }
+          @include mobile{
+            width: vw(m, 175);
+            height: vw(m, 43);
+            top: calc(-1 * vw(m, 2));
+            left: vw(m, 30);
+            background: url('/workout-v2/images/contents/tooltip_bg-w-m.png') no-repeat center / contain;
+            backdrop-filter: blur(5px);
+          }
+          @media screen and (max-width: 385px){
+            width: 130px;
+          }
+          &:before{
+            content: '';
+            position: absolute;
+            width: 95%; height: 100%;
+            top: 0; 
+            left: 4%;
+            box-shadow: 0px 6.84px 15.45px 0px #0000002d;
+            @include mobile{
+              height: 98%;
+              left: 5%;
+            }
+          }
+         .contents{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          background: none;
+          border: none;
+          width: 95%; height: 100%;
+          top: 0; 
+          left: 4%;
+          padding: 0;
+          @include mobile{
+            height: 98%;
+            left: 5%;
+          }
+          // padding: vw(w, 10) 0 0 vw(w, 22);
+          // @include tablet{
+          //   padding: vw(t, 10) 0 0 vw(t, 22);
+          // }
+          // @include mobile{
+          //   padding: vw(m, 8) 0 0 vw(m, 18);
+          // }
+          // @media screen and (max-width: 385px){
+          //   padding: vw(m, 10) 0 0 vw(m, 14);
+          // }
+          p{
+            font-size: vw(w, 14);
+            @include tablet{
+              font-size: vw(t, 14);
+            }
+            @include mobile{
+              font-size: vw(m, 10);
+            }
+            @media screen and (max-width: 385px){
+              font-size: 8px;
+            }
+          }
+          .btn-close{
+            position: absolute;
+            width: vw(w, 10); height: vw(w, 10);  
+            top: vw(w, 12);
+            right: vw(w, 12);
+            @include tablet{
+              width: vw(t, 10); height: vw(t, 10);
+              top: vw(t, 12);
+              right: vw(t, 12);
+            }
+            @include mobile{
+              display: none;
+            }
+            opacity: 1;
+            background: url('/workout-v2/images/icons/icon_close-gray.svg') no-repeat center / contain;
+            margin-top: 0;
+          }
+         } 
+        }
+      }
+    }
+  }
+  .audio-player-wrapper{
+    margin-top: vw(w, 80);
+    @include tablet{
+      margin-top: vw(t, 80);
+    }
+    @include mobile{
+      margin-top: vw(m, 85);
+    }
+  }
+  .btn-readmore{
+    margin-top: vw(w, 84);
+    @include tablet{
+      margin-top: vw(t, 84);
+    }
+    @include mobile{
+      margin-top: vw(m, 60);
+    }
+  }
+  .reterview-bg-image.pc-tablet-only{
+    position: absolute;
+    width: min(48.6979vw, 935px);
+    top: vw(w, 185);
+    left:0;
+    z-index: 1; // 배경 이미지 위에 표시
+    @include tablet{
+      width: vw(t, 535);
+      top: vw(t, 185);
+    }
+    @include mobile{
+      display: none;
+    }
+  }
+  .reterview-bg-image.mo-only{
+    @include mobile{
+      position: absolute;
+      width: vw(m,300); height: vw(m,400);
+      top: -16%;
+      right: 0;
+      z-index: 1; // 배경 이미지 위에 표시
+    }
+  }
+}
+

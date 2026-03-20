@@ -1,0 +1,226 @@
+@import "@/app/styles/common/_variables.scss";
+@import "@/app/styles/common/_mixin.scss";
+
+
+.tooltip-wrapper {
+  position: relative;
+
+  .icon {
+    display: inline-block;
+    width: vw(w, 22);
+    height: vw(w, 22);
+    background: url('/workout-v2/images/icons/icon_tooltip-22x22.svg');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .tooltip {
+    position: absolute;
+    right: vw(w, -20);
+    top: vw(w, 34);
+    background: #e9e9e9;
+    border-radius: vw(w, 5);
+    padding: vw(w, 1.5);
+    width: vw(w, 233);
+    z-index: 3;
+
+    .contents {
+      background-color: #383838;
+      border-radius: vw(w, 5);
+      padding: vw(w, 10) vw(w, 17);
+      display: flex;
+      gap: vw(w, 5);
+
+      .btn-close {
+        min-width: vw(w, 10);
+        height: vw(w, 10);
+        background: url('/workout-v2/images/icons/icon_close-white-10x10.svg');
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-top: vw(w, 3);
+        opacity: .4;
+        transition: .2s all;
+
+        &:hover {
+          opacity: .2;
+          transform: rotate(-90deg);
+        }
+      }
+
+      p {
+        font-size: vw(w, 14);
+        font-weight: 400;
+        line-height: 1.3;
+        color: #E9E9E9;
+      }
+
+
+    }
+
+    // &::after {
+    //   content: "";
+    //   position: absolute;
+    //   top: -13%;
+    //   right: 10%;
+    //   transform: translateX(-50%) rotate(180deg);
+    //   border-width: vw(w, 6);
+    //   border-style: solid;
+    //   border-color: #333 transparent transparent transparent;
+    //   z-index: 1;
+    // }
+
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   top: -20%;
+    //   right: 7.5%;
+    //   transform: translateX(-50%) rotate(180deg);
+    //   border-width: vw(w, 9);
+    //   border-style: solid;
+    //   border-color: #a5a5a5 transparent transparent transparent;
+    //   z-index: 0;
+    // }
+
+
+
+
+  }
+
+  // 툴팁 말풍선 꼬리
+  &:has(.tooltip) .icon {
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -90%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(180deg);
+      border-width: vw(w, 6);
+      border-style: solid;
+      border-color: #383838 transparent transparent transparent;
+      z-index: 4;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -105%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(180deg);
+      border-width: vw(w, 9);
+      border-style: solid;
+      border-color: #e9e9e9 transparent transparent transparent;
+      z-index: 0;
+    }
+  }
+
+}
+
+
+@include tablet {
+  .tooltip-wrapper {
+
+    .icon {
+      width: 22px;
+      height: 22px;
+    }
+
+    .tooltip {
+      right: vw(t, -20);
+      top: vw(w, 50);
+      border-radius: vw(t, 5);
+      padding: vw(t, 1.5);
+      width: vw(t, 300);
+
+      .contents {
+        border-radius: vw(t, 5);
+        padding: vw(t, 10) vw(t, 17);
+        gap: vw(t, 5);
+
+        .btn-close {
+          min-width: 10px;
+          height: 10px;
+          margin-top: vw(t, 3);
+        }
+
+        p {
+          font-size: 14px;
+        }
+      }
+
+    }
+
+    // 툴팁 말풍선 꼬리
+    &:has(.tooltip) .icon {
+      &::after {
+        border-width: 8px;
+        bottom: -19px;
+      }
+
+      &::before {
+        border-width: 9px;
+        bottom: -19px;
+      }
+    }
+
+  }
+
+}
+
+
+@include mobile {
+  .tooltip-wrapper {
+
+    .icon {
+      width: vw(m, 18);
+      height: vw(m, 18);
+    }
+
+    .tooltip {
+      right: vw(m, -5);
+      top: vw(m, 30);
+      border-radius: vw(m, 5);
+      padding: vw(m, 1.5);
+      width: vw(m, 171);
+
+      .contents {
+        border-radius: vw(m, 5);
+        padding: vw(m, 9) vw(m, 13);
+        gap: vw(m, 2);
+
+        .btn-close {
+          min-width: vw(m, 7);
+          height: vw(m, 7);
+          margin-top: vw(m, 2);
+        }
+
+        p {
+          font-size: max(10px, vw(m, 10));
+        }
+      }
+
+    }
+
+    // 툴팁 말풍선 꼬리
+    &:has(.tooltip) .icon {
+      &::after {
+        bottom: -110%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(180deg);
+        border-width: vw(m, 6);
+      }
+
+      &::before {
+        bottom: -133%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(180deg);
+        border-width: vw(m, 9);
+        border-style: solid;
+      }
+    }
+
+  }
+}

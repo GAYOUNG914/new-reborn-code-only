@@ -1,0 +1,37 @@
+@import "@/app/styles/common/_variables.scss";
+@import "@/app/styles/common/_mixin.scss";
+
+.section-more {
+    width: 100%;
+    padding: vw(w, 147) 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: vw(w, 30);
+
+    p {
+        font-family: "GowunBatang";
+        font-size: vw(w, 28);
+        line-height: 1.4;
+    }
+
+    @include tablet {
+        padding: vw(t, 147) 0;
+        gap: vw(t, 30);
+
+        p {
+            font-size: 28px;
+        }
+    }
+
+    @include mobile {
+        padding: vw(m, 280) 0;
+        gap: vw(m, 20);
+
+        p {
+            font-size: max(18px, vw(m, 18));
+        }
+    }
+
+}

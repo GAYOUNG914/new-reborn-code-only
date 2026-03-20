@@ -1,0 +1,57 @@
+@import "@/app/styles/common/_variables.scss";
+@import "@/app/styles/common/_mixin.scss";
+
+.btn-blur-play {
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: vw(w, 86);
+  height: vw(w, 86);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  transition: .3s transform $ease-out-hye;
+
+  .icon {
+    width: vw(w, 22);
+    height: vw(w, 30);
+    background: url('/workout-v2/images/icons/icon_play-white.svg');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: .3s transform $ease-out-hye;
+  }
+
+  &:hover {
+    transform: translate(-50%, -50%) scale(0.85);
+  }
+
+  @include tablet {
+    width: 86px;
+    height: 86px;
+
+    .icon {
+      width: 22px;
+      height: 30px;
+    }
+  }
+
+  @include mobile {
+    width: vw(m, 68);
+    height: vw(m, 68);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+
+    .icon {
+      width: vw(m, 18);
+      height: vw(m, 23);
+    }
+  }
+
+}

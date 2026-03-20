@@ -1,0 +1,216 @@
+@use '@/app/styles/common/variables' as *;
+@use '@/app/styles/common/mixin' as *;
+
+.service-section {
+  overflow: hidden;
+  position: relative;
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: none;
+  background: #121212 url('/workout-v2/images/contents/bg_main_service-pc_new.png') no-repeat center center / cover;
+  @include mobile {
+    background: #121212 url('/workout-v2/images/contents/bg_main_service-mo_new.png') no-repeat center center / cover;
+
+    height: 100vh;
+    height: 100lvh;
+    min-height: 830px;
+  }
+  
+  &-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: min(vw(w, 100), 8vh) vw(w, 40) min(vw(w, 100), 8vh);
+
+    @include tablet {
+      padding: min(vw(t, 100), 8vh) vw(t, 40) min(vw(t, 100), 8vh);
+    }
+
+    @include mobile {
+      padding: vw(m, 110) vw(m, 30) vw(m, 60);
+    }
+    @include mobile{
+      // padding: 110px 30px 60px 30px;
+      padding: 0 30px;
+    }
+  }
+  &_title {
+    // margin-right: vw(w, 96);
+    color: #fff;
+    flex: none;
+    text-align: center;
+    @include tablet {
+      margin-left: vw(t, 50);
+    }
+    @include mobile{
+      text-align: left;
+      margin: 0;
+      align-self: flex-start;
+      max-width: 340px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    button{
+      margin: 0 auto;
+    }
+  }
+  &_boxes {
+    margin-top: vw(w, 68);
+    @include tablet {
+      margin-top: vw(t, 68);
+    }
+    @include mobile{
+      margin-top: 0;
+      margin-bottom: vw(m, 37);
+    }
+    @include mobile{
+      margin-bottom: 37px;
+    }
+    ul {
+      @include pc {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      @include tablet-only {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      @include mobile{
+        marign-top: -30px;
+      }
+      
+      li {
+        margin: 0 auto;
+        animation-play-state: running !important;
+        
+        &:nth-child(1) {
+          animation: aniLeftRight1_pc 7.5s ease-in-out infinite alternate;
+          width: vw(w, 311);
+
+          position: relative;
+          left: 1%;
+          @include mobile {
+            animation: aniLeftRight1 7.5s ease-in-out infinite alternate;
+            // width: vw(m, 172);
+            width: vw(m, 210);
+          }
+          @include mobile{
+            width: 210px;
+          }
+          
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        
+        &:nth-child(2) {
+          animation: aniLeftRight2_pc 8s ease-in-out infinite alternate;
+          width: vw(w, 312);
+
+          position: relative;
+          left: 5%;
+          @include mobile {
+            animation: aniLeftRight2 8s ease-in-out infinite alternate;
+            // width: vw(m, 172);
+            width: vw(m, 210);
+            margin-top: -30px;
+          }
+          @include mobile{
+            margin-top: -30px;
+            width: 210px;
+          }
+          
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        
+        &:nth-child(3) {
+          animation: aniLeftRight3_pc 7s 0.2s ease-in-out infinite alternate;
+          width: vw(w, 316);
+
+          position: relative;
+          right: 3%;
+          @include mobile {
+            animation: aniLeftRight3 7s 0.2s ease-in-out infinite alternate;
+            // width: vw(m, 172);
+            width: vw(m, 210);
+            margin-top: -45px;
+          }
+          @include mobile{
+            margin-top: -45px;
+            width: 210px;
+          }
+          
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// KV 리스트 슬라이드 애니메이션 키프레임
+@keyframes aniLeftRight1_pc {
+  0% { 
+    transform: translateY(-4%); 
+  }
+  100% { 
+    transform: translateY(5%); 
+  }
+}
+@keyframes aniLeftRight2_pc {
+  0% { 
+    transform: translateY(5%); 
+  }
+  100% { 
+    transform: translateY(-5%); 
+  }
+}
+@keyframes aniLeftRight3_pc {
+  0% { 
+    transform: translateY(-5%); 
+  }
+  100% { 
+    transform: translateY(5%); 
+  }
+}
+
+@keyframes aniLeftRight1 {
+  0% { 
+    transform: translateX(-4vw); 
+  }
+  100% { 
+    transform: translateX(3vw); 
+  }
+}
+@keyframes aniLeftRight2 {
+  0% { 
+    transform: translateX(11vw); 
+  }
+  100% { 
+    transform: translateX(3vw); 
+  }
+}
+@keyframes aniLeftRight3 {
+  0% { 
+    transform: translateX(-3vw); 
+  }
+  100% { 
+    transform: translateX(5vw); 
+  }
+}

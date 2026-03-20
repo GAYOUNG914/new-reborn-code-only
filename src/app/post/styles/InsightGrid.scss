@@ -1,0 +1,200 @@
+@import "@/app/styles/common/_variables.scss";
+@import "@/app/styles/common/_mixin.scss";
+
+.insight-grid{
+  padding: 0 vw(w, 40);
+  @include tablet{
+    padding: 0 vw(t, 40);
+  }
+  @include mobile{
+    padding: vw(m, 30);
+    padding-top: 0;
+  }
+  &-container{
+    max-width: vw(w, 1274);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+    gap: vw(w, 30);
+    @include tablet{
+      max-width: vw(t, 1274);
+      gap: vw(t, 30);
+    }
+    @include mobile{
+      max-width: none;
+      grid-template-columns: repeat(2, 1fr);
+      gap: vw(m, 16);
+    }
+  }
+  &-item{
+    position: relative;
+    width: vw(w, 276);
+    height: vw(w, 413);
+    color: #fff;
+    text-align: left;
+    overflow: hidden;
+    @include tablet{
+      width: vw(t, 256);
+      height: vw(t, 383);
+    }
+    @include mobile{
+      width: auto;
+      height: auto;
+    }
+    &:hover{
+      @include hoverable{
+        .insight-grid-item_bg{
+          transform: scale(1.1);
+        }
+      }
+    }
+    &-text-wrapper{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: vw(w, 21) vw(w, 16);
+      @include tablet{
+        padding: vw(t, 21) vw(t, 16);
+      }
+      @include mobile{
+        padding: vw(m, 10) vw(m, 13);
+      }
+      &_badge{
+        display: inline-block;
+        padding: vw(w, 3) vw(w, 12) vw(w, 4);
+        border: 1px solid #fff;
+        border-radius: vw(w, 74);
+        margin-bottom: vw(w, 18);
+        @include tablet{
+          padding: vw(t, 3) vw(t, 12) vw(t, 4);
+          border-radius: vw(t, 74);
+          margin-bottom: vw(t, 18);
+        }
+        @include mobile{
+          padding: vw(m, 3) vw(m, 8) vw(m, 4);
+          border-radius: vw(m, 50);
+          margin-bottom: vw(m, 8);
+        }
+        span{
+          font-size: vw(w, 14);
+          line-height: normal;
+          font-weight: 700;
+          position: relative;
+          vertical-align: middle;
+          @include tablet{
+            font-size: vw(t, 14);
+          }
+          @include mobile{
+            font-size: vw(m, 10);
+          }
+        }
+      }
+      &_title{
+        span{
+          font-size: vw(w, 21);
+          line-height: 1.2;
+          font-weight: 700;
+          @include tablet{
+            font-size: vw(t, 21);
+          }
+          @include mobile{
+            font-size: vw(m, 18);
+          }
+        }
+      }
+      &_date{
+        margin-top: vw(w, 4);
+        @include tablet{
+          margin-top: vw(t, 4);
+        }
+        @include mobile{
+          margin-top: vw(m, 2);
+        }
+        span{
+          font-size: vw(w, 21);
+          line-height: 1.2;
+          font-weight: 400;
+          @include tablet{
+            font-size: vw(t, 21);
+          }
+          @include mobile{
+            font-size: vw(m, 12);
+          }
+        }
+      }
+    }
+    &_bg{
+      position: relative;
+      z-index: -1;
+      transform: scale(1);
+      transition: transform 0.3s $ease-out-rowan;
+    }
+    &-flag-wrapper{
+      position: absolute;
+      top: vw(w, 16);
+      right: vw(w, 16);
+      z-index: 1;
+      display: flex;
+      gap: vw(w, 8);
+      @include tablet{
+        top: vw(t, 16);
+        right: vw(t, 16);
+        gap: vw(t, 8);
+      }
+      @include mobile{
+        top: vw(m, 8);
+        right: vw(m, 8);
+        gap: vw(m, 4);
+      }
+    }
+    &-flag_hot{
+      font-size: vw(w, 14);
+      line-height: 1.2;
+      font-weight: 700;
+      padding: vw(w, 4) vw(w, 12);
+      border-radius: vw(w, 80);
+      border: 1px solid #FF7E5A;
+      color: #FF7E5A;
+      @include tablet{
+        font-size: vw(t, 14);
+        padding: vw(t, 4) vw(t, 12);
+        border-radius: vw(t, 80);
+      }
+      @include mobile{
+        font-size: vw(m, 10);
+        padding: vw(m, 2) vw(m, 5);
+        border-radius: vw(m, 40);
+      }
+    }
+    &-flag_new{
+      font-size: vw(w, 14);
+      line-height: 1.2;
+      font-weight: 700;
+      padding: vw(w, 4) vw(w, 12);
+      border-radius: vw(w, 80);
+      color: #FFCF21;
+      border: 1px solid #FFCF21;
+      @include tablet{
+        font-size: vw(t, 14);
+        padding: vw(t, 4) vw(t, 12);
+        border-radius: vw(t, 80);
+      }
+      @include mobile{
+        font-size: vw(m, 10);
+        padding: vw(m, 2) vw(m, 5);
+        border-radius: vw(m, 40);
+      }
+    }
+  }
+  .btn-readmore{
+    text-align: center;
+    margin-top: vw(w, 60);
+    @include tablet{
+      margin-top: vw(t, 60);
+    }
+    @include mobile{
+      margin-top: vw(m, 60);
+    }
+  }
+}

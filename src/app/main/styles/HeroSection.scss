@@ -1,0 +1,139 @@
+@use '@/app/styles/common/variables' as *;
+@use '@/app/styles/common/mixin' as *;
+
+.hero-section{
+  &_container{
+    height: 250vh;
+    height: 250lvh;
+  }
+  &_logo{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: calc(50% - 60px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: vw(w, 327);
+    height: vw(w, 128);
+    z-index: 2;
+    @include tablet{
+      width: vw(t, 327);
+      height: vw(t, 128);
+    }
+    @include mobile{
+      width: vw(m, 154);
+      height: vw(m, 60);
+      // width: 99px;
+      // height: 40px;
+      // top: 10px;
+      top: 43%;
+      transform: translateX(-50%) translateY(0);
+    }
+    path{
+      fill: #fff;
+    }
+    .slogan{
+      position: absolute;
+      bottom: vw(w, 128);
+      width: vw(w, 1217);
+      height: vw(w, 162);
+      margin-bottom: vw(w, 45);
+      @include tablet{
+        bottom: vw(t, 108);
+        width: vw(t, 1197);
+        height: vw(t, 142);
+        margin-bottom: vw(t, 25);
+      }
+      @include mobile{
+        bottom: vw(m, 46);
+        width: vw(m, 315);
+        height: vw(m, 46);
+        margin-bottom: vw(m, 24);
+      }
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+  &_title{
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(0, -50%);
+    z-index: 6;
+    color: #fff;
+    @include mobile{
+      top: calc(vw(m, 60) + 60px);
+      left: vw(m, 40);
+      transform: none;
+    }
+    .readmorebtn{
+      button{
+        margin: 0;
+      }
+    }
+  }
+  .sticky{
+    height: 100vh;
+    height: 100lvh;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+  }
+  .background{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    .bg-video{
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      opacity: 0;
+      video{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .bg-image{
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .scroll-down{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    .kv-scroll{
+      bottom: 8%;
+      right: vw(w, 200);
+      @include tablet{
+        bottom: 8%;
+        right: 5%;
+      }
+      @include mobile{
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%) rotate(90deg);
+      }
+    }
+  }
+}

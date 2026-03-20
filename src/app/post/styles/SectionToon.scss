@@ -1,0 +1,304 @@
+@use '@/app/styles/common/variables' as *;
+@use '@/app/styles/common/mixin' as *;
+
+.section-toon {
+  width: 100%;
+  background: #fff;
+  padding-bottom: vw(w, 140);
+  @include tablet {
+    padding-bottom: vw(t, 140);
+  }
+  @include mobile {
+    padding-bottom: vw(m, 105);
+  }
+  
+  // 히어로 일러스트레이션 섹션
+  &_hero {
+    position: relative;
+    height: vw(w, 600);
+    
+    @include tablet {
+      height: vw(t, 600);
+    }
+    
+    @include mobile {
+      height: vw(m, 300);
+    }
+    
+    &-background {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  // 중간 텍스트 섹션
+  &_intro {
+    max-width: vw(w, 1274);
+    margin: 0 auto;
+    padding: vw(w, 73) vw(w, 40) 0 vw(w, 40);
+    @include tablet {
+      max-width: vw(t, 1274);
+      padding: vw(t, 73) vw(t, 40) 0 vw(t, 40);
+    }
+    @include mobile {
+      max-width: none;
+      padding: vw(m, 40) vw(m, 30) 0 vw(m, 30);
+    }
+    
+    &-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: vw(w, 36);
+      border-bottom: 1px solid #F3F3F3;
+      @include tablet {
+        padding-bottom: vw(t, 36);
+      }
+      @include mobile {
+        padding-bottom: vw(m, 40);
+      }
+    }
+
+    .c-title_title{
+      display: flex;
+      align-items: center;
+      gap: vw(w, 21);
+      @include tablet {
+        gap: vw(t, 21);
+      }
+      @include mobile {
+        gap: vw(m, 9);
+      }
+      .c-title_title_toon{
+        color: #D0D0D0;
+        font-size: vw(w, 24);
+        @include tablet {
+          font-size: vw(t, 24);
+        }
+        @include mobile{
+          font-size: vw(m, 12);
+        }
+      }
+    }
+  }
+  
+  &_author {
+    width: vw(w, 96);
+    height: vw(w, 96);
+    border-radius: 50%;
+    @include tablet {
+      width: vw(t, 96);
+      height: vw(t, 96);
+    }
+    @include mobile {
+      width: vw(m, 60);
+      height: vw(m, 60);
+    }
+  }
+  
+  // 웹툰 그리드 섹션
+  &_grid {
+    max-width: vw(w, 1274);
+    padding: 0 vw(w, 40);
+    margin: 0 auto;
+    margin-top: vw(w, 60);
+    @include tablet {
+      max-width: vw(t, 1274);
+      padding: 0 vw(t, 40);
+      margin-top: vw(t, 60);
+    }
+    @include mobile {
+      max-width: none;
+      padding: 0 vw(m, 30);
+      margin-top: vw(m, 40);
+    }
+    &-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: vw(w, 103);
+      @include tablet {
+        gap: vw(t, 103);
+      }
+      @include mobile {
+        grid-template-columns: repeat(1, 1fr);
+        gap: vw(m, 40);
+      }
+    }
+  }
+  
+  &_item {
+    text-align: left;
+    &:hover{
+      @include hoverable{
+        .section-toon_item-image{
+          transform: scale(1.1);
+        }
+      }
+    }
+    @include mobile {
+      display: flex;
+      gap: vw(m, 14);
+    }
+
+    &-cover {
+      width: 100%;
+      height: vw(w, 246);
+      overflow: hidden;
+      position: relative;
+      border-radius: vw(w, 12);
+      border: 1px solid #EEEEEE;
+      overflow: hidden;      
+      @include tablet {
+        height: vw(t, 246);
+        border-radius: vw(t, 12);
+      }
+      @include mobile {
+        width: vw(m, 176);
+        height: vw(m, 132);
+        border-radius: vw(m, 8);
+        flex-shrink: 0;
+      }
+    }
+    
+    &-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    &-info {
+      padding-top: vw(w, 20);
+      @include tablet {
+        padding-top: vw(t, 20);
+      }
+      @include mobile {
+        padding-top:0;
+      }
+    }
+    
+    &-header {
+      display: flex;
+      align-items: center;
+      gap: vw(w, 6);
+      margin-bottom: vw(w, 13);
+      
+      @include tablet {
+        margin-bottom: vw(t, 13);
+        gap: vw(t, 6);
+      }
+      
+      @include mobile {
+        margin-bottom: vw(m, 4);
+        gap: vw(m, 5);
+      }
+    }
+    
+    &-episode {
+      font-size: vw(w, 21);
+      font-weight: 600;
+      color: var(--gray02);
+      @include tablet {
+        font-size: vw(t, 21);
+      }
+      @include mobile {
+        font-size: vw(m, 14);
+      }
+    }
+    
+    &-badges {
+      display: flex;
+      z-index: 2;
+      gap: vw(w, 6);
+      @include tablet {
+        gap: vw(t, 6);
+      }
+      @include mobile {
+        gap: vw(m, 4);
+      }
+      &_badge {
+        padding: vw(w, 4) vw(w, 8);
+        border-radius: vw(w, 12);
+        font-size: vw(w, 12);
+        font-weight: 700;
+        
+        @include tablet {
+          padding: vw(t, 4) vw(t, 8);
+          border-radius: vw(t, 12);
+          font-size: vw(t, 12);
+        }
+        
+        @include mobile {
+          padding: vw(m, 2) vw(m, 5);
+          border-radius: vw(m, 8);
+          font-size: vw(m, 10);
+        }
+        
+        &--new {
+          // color: #FFCF21;
+          color: #fff;
+          // border: 1px solid #FFCF21;
+          background: #FFCF21;
+        }
+        
+        &--hot {
+          // color: #FF5121;
+          color: #fff;
+          // border: 1px solid #FF5121;
+          background: #FF5121;
+        }
+      }
+    }
+    
+    &-title {
+      font-size: vw(w, 21);
+      font-weight: 700;
+      color: var(--gray05);
+      margin-bottom: vw(w, 13);
+      line-height: 1.3;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      @include tablet {
+        font-size: vw(t, 21);
+        margin-bottom: vw(t, 13);
+      }
+      @include mobile {
+        font-size: vw(m, 18);
+        margin-bottom: vw(m, 12);
+        -webkit-line-clamp: 2;
+      }
+    }
+    
+    &-description {
+      font-size: vw(w, 15);
+      color: #B7B7B7;
+      line-height: 1.2;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      @include tablet {
+        font-size: vw(t, 15);
+      }
+      @include mobile {
+        font-size: vw(m, 10);
+        -webkit-line-clamp: 2;
+      }
+    }
+  }
+  
+  .btn-readmore {
+    margin-top: vw(w, 60);
+    @include tablet {
+      margin-top: vw(t, 60);
+    }
+    @include mobile {
+      margin-top: vw(m, 60);
+    }
+  }
+}

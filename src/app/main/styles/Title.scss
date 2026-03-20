@@ -1,0 +1,64 @@
+@use '@/app/styles/common/variables' as *;
+@use '@/app/styles/common/mixin' as *;
+
+.heading{
+  @include mobile{
+    font-size: vw(m, 34);
+  }
+  @include mobile{
+    font-size: 34px;
+  }
+}
+.desc{
+  margin-top: vw(w, 20);
+  font-weight: 700;
+  @include tablet{
+    margin-top: vw(t, 20);
+  }
+  @include mobile{
+    font-size: vw(m, 16);
+    margin-top: vw(m, 20);
+    line-height: 1.5;
+  }
+  @include mobile{
+    font-size: 16px;
+    margin-top: 20px;
+    line-height: 1.5;
+  }
+}
+.desc2{
+  margin-top: vw(w, 12);
+  font-size: vw(w, 18);
+  @include tablet{
+    margin-top: vw(t, 12);
+    font-size: vw(t, 18);
+  }
+  @include mobile{
+    font-size: vw(m, 14);
+    margin-top: vw(m, 8);
+    line-height: 1.5;
+  }
+  @include mobile{
+    font-size: 14px;
+    margin-top: 8px;
+    line-height: 1.5;
+  }
+}
+.readmorebtn{
+  margin-top: vw(w, 40);
+  @include tablet{
+    margin-top: vw(t, 40);
+  }
+  @include mobile{
+    margin-top: vw(m, 13);
+  }
+  @include mobile{
+    margin-top: 13px;
+  }
+  button{
+    margin: 0;
+    @include mobile{
+      margin: 0 auto;
+    }
+  }
+}

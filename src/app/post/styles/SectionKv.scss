@@ -1,0 +1,272 @@
+@use '@/app/styles/common/variables' as *;
+@use '@/app/styles/common/mixin' as *;
+
+.section-kv{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  min-height: vw(w, 800);
+  box-shadow: -4px 4px 11px rgba(0, 0, 0, 0.2);
+  @include tablet{
+    min-height: vw(t, 800);
+  }
+  @include mobile{
+    height: auto;
+    min-height: 0;
+  }
+  &_container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: vw(w, 1274);
+    padding: 0 vw(w, 40);
+    margin: 0 auto;
+    height: 100%;
+    z-index: 1;
+    @include tablet{
+      max-width: vw(t, 1274);
+      padding: 0 vw(t, 40);
+    }
+    @include mobile{
+      display: block;
+      max-width: none;
+      padding: 0 vw(m, 30);
+      padding-top: vw(m, 110);
+      padding-bottom: vw(m, 62);
+    }
+  }
+  &_left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: vw(w, 74);
+    @include tablet{
+      gap: vw(t, 74);
+    }
+    @include mobile{
+      // height: 77%;
+      // margin-top: vw(m, 110);
+      // justify-content: space-between;
+    }
+    &_title{
+      .heading{
+        margin-top: vw(w, 10);
+        @include tablet{
+          margin-top: vw(t, 10);
+        }
+        @include mobile{
+          margin-top: vw(m, 2);
+        }
+      }
+    }
+    &_navigation{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: vw(w, 26);
+      @include tablet{
+        gap: vw(t, 26);
+      }
+      @include mobile{
+        gap: vw(m, 24);
+      }
+    }
+    &_nav-item{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: vw(w, 10);
+      @include tablet{
+        gap: vw(t, 10);
+      }
+      @include mobile{
+        gap: vw(m, 13);
+      }
+      .nav-button{
+        overflow: hidden;
+        font-family: $font-ls;
+        font-size: vw(w, 20);
+        font-weight: 400;
+        width: vw(w, 107);
+        height: vw(w, 107);
+        border-radius: 100%;
+        background: url('/workout-v2/images/contents/post_kv_button.png') no-repeat center center / contain;
+        @include tablet{
+          font-size: vw(t, 20);
+          width: vw(t, 107);
+          height: vw(t, 107);
+        }
+        @include mobile{
+          font-size: vw(m, 16);
+          width: vw(m, 86);
+          height: vw(m, 86);
+        }
+      }
+    }
+  }
+  &_right{
+    @include mobile{
+      // position: absolute;
+      // top: 10%;
+      box-shadow: 0px 4px 4px 2px #00000033;
+    }
+    &_hero{
+      position: relative;
+      width: vw(w, 526);
+      height: vw(w, 700);
+      @include tablet{
+        width: vw(t, 526);
+        height: vw(t, 700);
+      }
+      @include mobile{
+        width: vw(m, 341);
+        height: vw(m, 453);
+      }
+      .inner{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%; height: 100%;
+        @include mobile{
+          flex-direction: column-reverse;
+        }
+        .data-center-wrapper{
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%; height: 80%;
+          padding: vw(w, 20);
+          padding-bottom: 0;
+          @include tablet{
+            padding: vw(t, 20);
+          }
+          @include mobile{
+            padding: vw(m, 18);
+            height: 75.5%;
+          }
+          .texts{
+            position: absolute;
+            top: 55%; left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            @include mobile{
+              display: none;
+            }
+            &_title{
+              font-family: $font-g;
+              font-size: vw(w, 28);
+              line-height: 1.2;
+              @include tablet{
+                font-size: vw(t, 28);
+              }
+            }
+            &_subtitle{
+              font-family: $font-g;
+              margin-top: vw(w, 33);
+              font-size: vw(w, 15);
+              @include tablet{
+                margin-top: vw(t, 33);
+                font-size: vw(t, 15);
+              }
+            }
+          }
+          .date{
+            font-family: $font-g;
+            position: absolute;
+            bottom: vw(w, 20);
+            font-size: vw(w, 20);
+            @include tablet{
+              bottom: vw(t, 20);
+              font-size: vw(t, 20);
+            }
+            @include mobile{
+              display: none;
+            }
+          }
+          .bg_image{
+            width: 100%; height: 100%;
+          }
+        }
+        .data-text-wrapper{
+          position: relative;
+          width: 100%;
+          height: 20%;
+          @include mobile{
+            height: 24.5%;
+            color: #F6F4ED;
+            padding: vw(m, 18);
+          }
+          .text01{
+            @include mobile{
+              font-size: vw(m, 12);
+              margin-bottom: vw(m, 5);
+            }
+          }
+          .text02.month{
+            font-family: $font-a;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: vw(w, 72);
+            color: #E5E2D2;
+            @include tablet{
+              font-size: vw(t, 72);
+            }
+            @include mobile{
+              position: static;
+              transform: none;
+              font-size: vw(m, 34);
+            }
+          }
+          .text03{
+            @include mobile{
+              font-family: $font-a;
+              font-size: vw(m, 18);
+            }
+          }
+          .text04{
+            @include mobile{
+              margin-top: vw(m, 13);
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              // gap: vw(m, 6);
+              p{
+                font-size: vw(m, 13);
+                &:nth-child(2){
+                  font-family: $font-g;
+                }
+              }
+              .line{
+                width: 54%;
+                height: vw(m, 1);
+                background: #F6F4ED;
+                display: flex;
+                align-items: center;
+              }
+            }
+          }
+        }
+      }
+      .hero_bg_image{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -2;
+      }
+    }
+  }
+  &_bg{
+    width: 100%;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: -1;
+  }
+}

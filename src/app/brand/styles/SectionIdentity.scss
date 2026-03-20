@@ -1,0 +1,182 @@
+@import "@/app/styles/common/_variables.scss";
+@import "@/app/styles/common/_mixin.scss";
+
+.section-identity {
+
+  .section-shape-swiper-inner {
+    background: url('/workout-v2/images/contents/bg_brand_identity-pc.png') 100% / cover;
+
+    .b-c_body {
+
+      img {
+        right: 25%;
+      }
+
+      .b-c_item {
+        &:nth-child(1) img {
+            width: vw(w, 463);
+            height: vw(w, 540);
+            transform: translate(20%, -50%);
+        }
+        &:nth-child(2) img {
+            width: vw(w, 200);
+            height: vw(w, 200);
+            transform: translate(0%, -50%);
+        }
+        &:nth-child(3) img {
+            width: vw(w, 237);
+            height: vw(w, 253);
+        }
+      }
+    }
+  }
+  
+
+  .shape {
+
+    img { object-fit: contain; }
+    
+    &.shape-1 {
+      top: calc(vw(w, 200) + 10vh);
+      left: calc(25% - vw(w, 150));
+      transform: translateX(-50%);
+      width: vw(w, 163);
+      height: vw(w, 163);
+      animation: floatY 4s ease-in-out infinite;
+      // z-index: 1;
+      transition: opacity .2s;
+      opacity: 0.2;
+    }
+    &.shape-2 {
+      top: -3%;
+      right: 5%;
+      width: vw(w, 750);
+      height: vw(w, 600);
+      animation: floatY 4s ease-in-out infinite;
+    }
+    &.shape-3 {
+      bottom: -2%;
+      left: 0;
+      width: vw(w, 1100);
+      height: vw(w, 500);
+      animation: floatY 5s ease-out infinite;
+    }
+  }
+
+  &:has(.b-c_body-inner.second) .shape-1,
+  &:has(.b-c_body-inner.third) .shape-1 {
+    opacity: 0.2;
+  } 
+
+
+  @keyframes floatY {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(5%); }
+    100% { transform: translateY(0); }
+  }
+
+  @include tablet {
+      .shape {
+        &.shape-1 {
+          top: vw(t, 320);
+          left: vw(t, 230);
+          width: vw(t, 163);
+          height: vw(t, 163);
+        }
+        &.shape-2 {
+          top: -3%;
+          right: 5%;
+          width: vw(t, 750);
+          height: vw(t, 600);
+        }
+        &.shape-3 {
+          left: 0;
+          width: vw(t, 1100);
+          height: vw(t, 500);
+        }
+      }
+
+    .section-shape-swiper-inner {
+      .b-c_body {
+        .b-c_item {
+          &:nth-child(1) img {
+              right: 20%;
+              width: vw(t, 463);
+              height: vw(t, 540);
+          }
+          &:nth-child(2) img {
+              right: 22%;
+              width: vw(t, 200);
+              height: vw(t, 200);
+          }
+          &:nth-child(3) img {
+              width: vw(t, 237);
+              height: vw(t, 253);
+          }
+        }
+      }
+    
+    }
+  }
+
+
+  @include mobile {
+    .section-shape-swiper-inner {
+      background: url('/workout-v2/images/contents/bg_brand_identity-mo.png') 100% / cover;
+    }
+
+    .shape {
+        &.shape-1 {
+          top: vw(m, 200);
+          left: -4%;
+          width: vw(m, 100);
+          height: vw(m, 100);
+        }
+        &.shape-2 {
+          top: -3%;
+          right: 0%;
+          width: vw(m, 200);
+          height: vw(m, 390);
+        }
+        &.shape-3 {
+          bottom: -5%;
+          left: auto;
+          right: 0;
+          width: vw(m, 370);
+          height: vw(m, 370);
+        }
+    }
+
+    .section-shape-swiper-inner {
+      .b-c_body {
+        .b-c_item {
+          img {
+            right: auto;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+          &:nth-child(1) img {
+              width: vw(m, 340);
+              height: vw(m, 340);
+              left: 50%;
+              transform: translate(-50%, -50%);
+          }
+          &:nth-child(2) img {
+              width: vw(m, 150);
+              height: vw(m, 150);
+              left: 50%;
+              transform: translate(-50%, -50%);
+          }
+          &:nth-child(3) img {
+              width: vw(m, 162);
+              height: vw(m, 173);
+              left: 50%;
+              transform: translate(-50%, -50%);
+          }
+        }
+      }
+    
+    }
+  }
+
+}

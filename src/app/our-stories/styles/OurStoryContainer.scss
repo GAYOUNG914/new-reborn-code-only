@@ -1,0 +1,117 @@
+@import "@/app/styles/common/_variables.scss";
+@import "@/app/styles/common/_mixin.scss";
+
+.our-stories {
+
+    position: relative;
+    overflow: hidden;
+    max-width: 100vw;
+
+    .vlog-bg {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: vw(w, 4869);
+        background: url('/workout-v2/images/contents/bg_vlog-pc.png') no-repeat top / cover;
+        z-index: -1;
+    }
+
+    .section-to-top{
+        background: none;
+
+        .to-top-wrapper {
+
+            p {
+                color: #000000;
+            }
+        }
+    }
+
+    .section-more {
+
+        position: relative;
+        overflow: visible;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: vw(w, 1700);
+            transform: translateY(-50%);
+            background: url('/workout-v2/images/contents/bg_our-stories-pc.png') no-repeat center / cover;
+            z-index: -1;
+        }
+    }
+
+
+    @include tablet {
+
+        .vlog-bg {
+            height: vw(t, 4869);
+            background: url('/workout-v2/images/contents/bg_vlog-mo.png') no-repeat top / cover;
+        }
+        
+        .section-more {
+            &::before {
+                height: vw(t, 1700);
+            }
+        }
+
+
+    }
+
+    @include mobile {
+
+        .vlog-bg {
+            height: vw(m, 3719);
+        }
+
+        .section-more { 
+            padding: vw(m, 200) 0;
+
+            &::before {
+                height: vw(m, 800);
+                background: url('/workout-v2/images/contents/bg_our-stories-mo.png') no-repeat center / cover;
+            }
+        }
+
+    }
+
+}
+
+
+iframe {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100dvh;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 9999;
+    pointer-events: none;
+}
+
+
+// .full-video.on {
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     width: 100vw;
+//     height: 100dvh;
+//     background-color: rgba(0,0,0,0.8);
+//     z-index: 9999;
+//     pointer-events: none;
+
+//     .video-wrapper {
+//         position: absolute;
+//         top: 50%;
+//         left: 50%;
+//         transform: translate(-50%, -50%);
+//         pointer-events: all;
+//         height: 100%;
+//     }
+
+// }

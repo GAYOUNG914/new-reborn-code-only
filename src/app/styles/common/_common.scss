@@ -1,0 +1,273 @@
+@use './variables' as *;
+@use './mixin' as *;
+
+:root {
+  // Root 는 서버 껐다 켜야 반영 됨
+  --main-font: "Wanted Sans";
+
+  font-family: var(--main-font);
+
+  --white: #fff;
+
+  --black02: #000000;
+  --black03: #252525;
+  
+  --gray01: #F4F4F4;
+  --gray02: #888888;
+  --gray04: #B7B7B7;
+  --gray05: #484848;
+
+  --purple: #5E00D7;
+
+  --fontColor: #000;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+//font
+.font-w{
+  font-family: $font-w;
+}
+.font-g{
+  font-family: $font-g;
+}
+.font-a{
+  font-family: $font-a;
+}
+
+// color
+.white{
+  color: var(--white);
+}
+.black02{
+  color: var(--black02);
+}
+.black03{
+  color: var(--black03);
+}
+.gray02{
+  color: var(--gray02);
+}
+.gray04{
+  color: var(--gray04);
+}
+.gray05{
+  color: var(--gray05);
+}
+.purple{
+  color: var(--purple);
+}
+
+/* Typo */
+
+.h2_n{
+  font-size: vw(w, 90);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  @include tablet{
+    font-size: vw(t, 90);
+  }
+  @include mobile{
+    font-size: 60px;
+  }
+}
+
+.h3_n{
+  font-size: vw(w, 48);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  @include tablet{
+    font-size: vw(t, 48);
+  }
+  @include mobile{
+    font-size: 42px;
+  }
+}
+
+.h4_n{
+  font-size: vw(w, 51);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  @include tablet{
+    font-size: vw(t, 51);
+  }
+  @include mobile{
+    font-size: 34px;
+  }
+}
+
+.h5_n{
+  font-size: vw(w, 36);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  @include tablet{
+    font-size: vw(t, 36);
+  }
+  @include mobile{
+    font-size: 24px;
+  }
+}
+
+.h6_n{
+  font-size: vw(w, 30);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  @include tablet{
+    font-size: vw(t, 30);
+  }
+  @include mobile{
+    font-size: 20px;
+  }
+}
+
+.s1_n{
+  font-size: vw(w, 24);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  @include tablet{
+    font-size: vw(t, 24);
+  }
+  @include mobile{
+    font-size: 14px;
+  }
+}
+
+.s2_n{
+  font-size: vw(w, 21);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  @include tablet{
+    font-size: vw(t, 21);
+  }
+  @include mobile{
+    font-size: 14px;
+  }
+}
+
+.b1_n{
+  font-size: vw(w, 21);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  @include tablet{
+    font-size: vw(t, 21);
+  }
+  @include mobile{
+    font-size: 14px;
+  }
+}
+
+
+.b2_n{
+  font-size: vw(w, 21);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  @include tablet{
+    font-size: vw(t, 21);
+  }
+  @include mobile{
+    font-size: 14px;
+  }
+}
+
+.button_n{
+  font-size: vw(w, 21);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  @include tablet{
+    font-size: vw(t, 21);
+  }
+  @include mobile{
+    font-size: 14px;
+  }
+}
+
+.caption_n{
+  font-size: vw(w, 12);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  @include tablet{
+    font-size: vw(t, 12);
+  }
+  @include mobile{
+    font-size: 10px;
+  }
+}
+
+/* Font */
+.w300 { font-weight: 300; }
+.w400 { font-weight: 400; }
+.w500 { font-weight: 500; }
+.w600 { font-weight: 600; }
+.w700 { font-weight: 700; }
+
+/* blind */
+.blind { position: absolute; font-size: 0; text-indent: -9999px; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+.css-container{ position: fixed; top: 0; left: 0; width: 0; height: 100vh; pointer-events: none; visibility: hidden; }
+
+.pc-only {
+  @include tablet { display: none !important; }
+  @include mobile { display: none !important; }
+}
+
+.tablet-only {
+  @include pc { display: none !important; }
+  @include mobile { display: none !important; }
+}
+
+.pc-tablet-only {
+  @include mobile { display: none !important; }
+}
+
+.mo-only {
+  @include not-mobile { display: none !important; }
+}
+
+.fadeElement {
+  transition: opacity 0.3s 0.3s ease-in-out; 
+  
+  &.show {
+    opacity: 1;
+  }
+  
+  &.hide {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+
+// 키프레임
+@keyframes scrollFlow { 
+  0% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+@keyframes marqueeUp {
+	0%   { transform: translateY(-50%); }
+	100% { transform: translateY(50%); }
+}
+@keyframes marqueeDown {
+	0%   { transform: translateY(50%); }
+	100% { transform: translateY(-50%); }
+}

@@ -1,0 +1,53 @@
+@import "@/app/styles/common/_variables.scss";
+@import "@/app/styles/common/_mixin.scss";
+
+.section-to-top{
+    position: relative;
+    background-color: #121212;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: vw(w, 366) 0;
+
+    .to-top-wrapper {
+        z-index: 1;
+
+        p {
+            font-family: "GowunBatang";
+            font-size: vw(w, 28);
+            font-weight: 400;
+            line-height: 1.2;
+            color: #fff;
+            margin-bottom: vw(w, 50);
+            text-align: center;
+            letter-spacing: -0.06rem;
+        }
+    }
+
+
+    @include tablet {
+        padding: vw(t, 366) 0;
+
+        .to-top-wrapper {
+            p {
+                font-size: vw(t, 28);
+                margin-bottom: vw(t, 50);
+            }
+        }
+
+    }    
+
+    @include mobile {
+        padding: vw(m, 240) 0 vw(m, 280);
+
+        .to-top-wrapper {
+            p {
+                font-size: vw(m, 18);
+                letter-spacing: 0rem;
+                line-height: 1.4;
+                margin-bottom: vw(m, 35);
+            }
+        }
+    }
+
+}

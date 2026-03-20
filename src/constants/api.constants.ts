@@ -1,0 +1,3 @@
+export const FINGERPRINTJS_API_KEY =
+  process.env.NEXT_PUBLIC_FINGERPRINTJS_API_KEY ?? "";
+export const CONTENTS_API_HOST = process.env.NEXT_PUBLIC_BASE_URL;

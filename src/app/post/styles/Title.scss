@@ -1,0 +1,54 @@
+@use '@/app/styles/common/variables' as *;
+@use '@/app/styles/common/mixin' as *;
+
+.c-title{
+  &_badge{
+    display: inline-block;
+    border: 1px solid #000;
+    border-radius: vw(w, 100);
+    padding: vw(w, 3) vw(w, 9);
+    @include tablet{
+      padding: vw(t, 3) vw(t, 9);
+      border-radius: vw(t, 100);
+    }
+    @include mobile{
+      padding: vw(m, 3) vw(m, 9);
+      border-radius: vw(m, 100);
+    }
+    span{
+      font-family: $font-a;
+      font-size: vw(w, 24);
+      font-weight: 400;
+      line-height: 1.2;
+      @include tablet{
+        font-size: vw(t, 24);
+      }
+      @include mobile{
+        font-size: vw(m, 14);
+      }
+    }
+  }
+  &_title{
+    h3{ 
+      font-family: $font-a;
+      font-size: vw(w, 64);
+      font-weight: 400;
+      line-height: 1.2;
+      @include tablet{
+        font-size: vw(t, 64);
+      }
+      @include mobile{
+        font-size: vw(m, 36);
+      }
+    }
+  }
+  &_desc{
+    margin-top: vw(w, 9);
+    @include tablet{
+      margin-top: vw(t, 9);
+    }
+    @include mobile{
+      margin-top: vw(m, 10);
+    }
+  }
+}

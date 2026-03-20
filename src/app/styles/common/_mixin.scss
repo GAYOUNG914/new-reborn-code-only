@@ -1,0 +1,291 @@
+@use 'sass:math';
+@use 'sass:list';
+@use "sass:meta";
+
+@function vw($viewport, $px) {
+  @if $viewport == w {
+    $width: 1920;
+    $w: math.div(1, math.div($width, 1px)) * 120;
+    $max-width: 1920;
+    $vws : ();
+    $topx: $px * math.div($max-width, $width);
+    @each $v in $px {
+      @if meta.type-of($v) == number {
+        $px: math.div($v, 1px);
+        $vw: $px * $w;
+        $vws: list.append($vws, if($vw == 0, 0, $vw + vw));
+      } @else {
+        $vws: list.append($vws, $v);
+      }
+    }
+    @return min(#{$vws}, #{$topx}px);
+
+  } @else if $viewport == t {
+    // $width: 1220; //rowan 0312
+    $width: 1023; 
+    $w: math.div(1, math.div($width, 1px)) * 100;
+    // $max-width: 1220; //rowan 0312
+    $max-width: 1023; 
+    $vws : ();
+    $topx: $px * math.div($max-width, $width);
+    @each $v in $px {
+      @if meta.type-of($v) == number {
+        $px: math.div($v * 0.85, 1px);
+        $vw: $px * $w;
+        $vws: list.append($vws, if($vw == 0, 0, $vw + vw));
+      } @else {
+        $vws: list.append($vws, $v * 0.85);
+      }
+    }
+    @return min(#{$vws}, #{$topx}px);
+
+  } @else if $viewport == m {
+    $width: 400;
+    $w: math.div(1, math.div($width, 1px)) * 100;
+    $max-width: 767;
+    $vws : ();
+    $topx: $px * math.div($max-width, $width);
+    @each $v in $px {
+      @if meta.type-of($v) == number {
+        $px: math.div($v, 1px);
+        $vw: $px * $w;
+        $vws: list.append($vws, if($vw == 0, 0, $vw + vw));
+      } @else {
+        $vws: list.append($vws, $v);
+      }
+    }
+    @return min(#{$vws}, #{$topx}px);
+
+  } @else if $viewport == f {
+    $width: 1920;
+    $w: math.div(1, math.div($width, 1px)) * 100;
+    $max-width: 3920;
+    $vws : ();
+    $topx: $px * math.div($max-width, $width);
+    @each $v in $px {
+      @if meta.type-of($v) == number {
+        $px: math.div($v, 1px);
+        $vw: $px * $w;
+        $vws: list.append($vws, if($vw == 0, 0, $vw + vw));
+      } @else {
+        $vws: list.append($vws, $v);
+      }
+    }
+    @return #{$vws};
+
+  } @else {
+    $width: 767;
+    $w: math.div(1, math.div($width, 1px)) * 100;
+    $vws: ();
+  
+    @each $v in $px {
+      @if meta.type-of($v) == number {
+        $px: math.div($v, 1px);
+        $vw: $px * $w;
+        $vws: list.append($vws, if($vw == 0, 0, $vw + vw));
+      } @else {
+        $vws: list.append($vws, $v);
+      }
+    }
+  
+    @return $vws;
+  }
+}
+
+// size media query
+// --mobile
+@mixin mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin mobile-small {
+  @media (max-width: 399px) {
+    @content;
+  }
+}
+
+@mixin not-mobile {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+// --tablet
+@mixin tablet {
+  @media (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin tablet-only {
+  @media (min-width: 768px) and (max-width: 1023px) { 
+    @content;
+  }
+}
+
+// --laptop
+@mixin laptop {
+  @media (max-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin laptop-only {
+  @media (min-width: 1024px) and (max-width: 1440px) {
+    @content;
+  }
+}
+
+// --pc
+@mixin pc {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin pc-minheight {
+  @media (min-width: 1024px) and (max-height: 900px) {
+    @content;
+  }
+}
+
+// --wide
+@mixin wide {
+  @media (min-width: 1921px) {
+    @content;
+  }
+}
+
+//핸드폰이 가로일 때
+@mixin landscape {
+	@media (orientation: landscape) {
+    @content;
+  }
+}
+
+//hoverable
+@mixin hoverable {
+  @media (hover: hover) and (pointer: fine) {
+    @content;
+  }
+}
+
+@mixin font($name: null, $font-size: 14px, $weight: null, $line-height: null) {
+	@if type-of($name) != null {
+		font-family: $name, sans-serif;
+	}
+	font-size: $font-size;
+	line-height: 150%;
+	@if type-of($weight) != null {
+		font-weight: $weight;
+	}
+}
+
+//텍스트 블라인드
+@mixin blind{
+	position: absolute;
+	clip: rect(0 0 0 0);
+	font-size: 1px;
+	color: transparent;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+}
+
+// 가운데 정렬
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  
+// 양쪽 정렬
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// 중앙 정렬
+@mixin position-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// 상단 고정
+@mixin position-fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+
+// 링크 버튼 hover 인터렉션
+@mixin link-btn-hover{
+	&::before{
+		content:'';
+		clear:both;
+		position:absolute;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		display:block;
+		background-color:rgba(255,255,255,0);
+		transition: 0.3s ease-in all;
+	}
+	&:hover,
+	&:focus {
+	  &::before {
+		background-color:rgba(255,255,255,.2);
+		backdrop-filter: blur(10px);
+	  }
+	}
+}
+
+//텍스트 그라디언트
+@mixin text-gradient($direction, $color1, $color2){
+  background: linear-gradient(to $direction, $color1, $color2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+//fade-up-init
+@mixin fade-up-init {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.2s, transform 1s $ease-out-rowan;
+}
+//fade-up-on
+@mixin fade-up-on {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+//show-up-init
+@mixin show-up-init {
+  transform: translateY(100%);
+  transition: transform 1s $ease-out-rowan;
+}
+//show-up-on
+@mixin show-up-on {
+  transform: translateY(0);
+}
+
+//fade-in-init
+@mixin fade-in-init {
+  opacity: 0;
+  transition: opacity 1.2s $ease-out-rowan;
+}
+//fade-in-on
+@mixin fade-in-on {
+  opacity: 1;
+}

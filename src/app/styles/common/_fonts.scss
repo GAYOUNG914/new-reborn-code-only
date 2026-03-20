@@ -1,0 +1,146 @@
+@use './variables' as *;
+
+//LibertinusSans
+@font-face {
+  font-family: "LibertinusSans";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: local("LibertinusSans Bold"), url("https://d1as53h2pztvcj.cloudfront.net/font/LibertinusSans/LibertinusSans-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "LibertinusSans";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: local("LibertinusSans Regular"), url("https://d1as53h2pztvcj.cloudfront.net/font/LibertinusSans/LibertinusSans-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "LibertinusSans";
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: local("LibertinusSans Italic"), url("https://d1as53h2pztvcj.cloudfront.net/font/LibertinusSans/LibertinusSans-Italic.ttf") format("truetype");
+}
+
+//GmarketSans
+@font-face {
+  font-family: "GmarketSans";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: local("GmarketSans Light"), url("https://d1as53h2pztvcj.cloudfront.net/font/GmarketSans/GmarketSansTTFLight.ttf") format("truetype");
+}
+@font-face {
+  font-family: "GmarketSans";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: local("GmarketSans Medium"), url("https://d1as53h2pztvcj.cloudfront.net/font/GmarketSans/GmarketSansTTFMedium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "GmarketSans";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: local("GmarketSans Bold"), url("https://d1as53h2pztvcj.cloudfront.net/font/GmarketSans/GmarketSansTTFBold.ttf") format("truetype");
+}
+
+// GowunBatang
+@font-face {
+  font-family: "GowunBatang";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: local("GowunBatang Bold"), url("https://d1as53h2pztvcj.cloudfront.net/font/GowunBatang/GowunBatang-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "GowunBatang";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: local("GowunBatang Regular"), url("https://d1as53h2pztvcj.cloudfront.net/font/GowunBatang/GowunBatang-Regular.ttf") format("truetype");
+}
+
+// Aboreto
+@font-face {
+  font-family: "Aboreto";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: local("Aboreto Regular"), url("https://d1as53h2pztvcj.cloudfront.net/font/Aboreto/Aboreto-Regular.ttf") format("truetype");
+}
+
+// tvNEnjoystories
+@font-face {
+  font-family: "tvNEnjoystories";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: local("tvNEnjoystories Light"), url("https://d1as53h2pztvcj.cloudfront.net/font/tvNEnjoystories/tvNEnjoystoriesLight.ttf") format("truetype");
+}
+@font-face {
+  font-family: "tvNEnjoystories";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: local("tvNEnjoystories Medium"), url("https://d1as53h2pztvcj.cloudfront.net/font/tvNEnjoystories/tvNEnjoystoriesMedium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "tvNEnjoystories";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: local("tvNEnjoystories Bold"), url("https://d1as53h2pztvcj.cloudfront.net/font/tvNEnjoystories/tvNEnjoystoriesBold.ttf") format("truetype");
+}
+
+/* Wanted Sans */
+@font-face {
+  font-family: "Wanted Sans";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 1000;
+  src: local("Wanted Sans ExtraBlack"), url("https://d1as53h2pztvcj.cloudfront.net/font/wantedsans/WantedSans-ExtraBlack.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Wanted Sans";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src: local("Wanted Sans Black"), url("https://d1as53h2pztvcj.cloudfront.net/font/wantedsans/WantedSans-Black.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Wanted Sans";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src: local("Wanted Sans ExtraBold"), url("https://d1as53h2pztvcj.cloudfront.net/font/wantedsans/WantedSans-ExtraBold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Wanted Sans";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: local("Wanted Sans Bold"), url("https://d1as53h2pztvcj.cloudfront.net/font/wantedsans/WantedSans-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Wanted Sans";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: local("Wanted Sans SemiBold"), url("https://d1as53h2pztvcj.cloudfront.net/font/wantedsans/WantedSans-SemiBold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Wanted Sans";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: local("Wanted Sans Medium"), url("https://d1as53h2pztvcj.cloudfront.net/font/wantedsans/WantedSans-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Wanted Sans";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: local("Wanted Sans Regular"), url("https://d1as53h2pztvcj.cloudfront.net/font/wantedsans/WantedSans-Regular.woff2") format("woff2");
+}

@@ -1,0 +1,361 @@
+@import "@/app/styles/common/_variables.scss";
+@import "@/app/styles/common/_mixin.scss";
+
+.section-logo {
+  padding: vw(w, 165) 0 0;
+  background-color: rgba(235, 238, 244, 1);
+  background: url('/workout-v2/images/contents/bg_brand_type-pc.png') 100% / cover;
+  overflow: hidden;
+
+  .brand-title {
+    transform: translate(0,0);
+  }
+  .brand-desc {
+    transform: translate(0,0);
+    color: #000000;
+  }
+
+
+  .l-head {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: vw(w, 30);
+    z-index: 1;
+
+    .title {
+      font-size: vw(w, 36);
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    .desc {
+      font-size: vw(w, 21);
+      line-height: 1.5;
+      font-weight: 400;
+    }
+  }
+
+  .l-inner {
+
+    .l-type {
+
+      display: flex;
+      // align-items: center;
+      justify-content: center;
+      gap: vw(w, 28);
+      margin-top: vw(w, 128);
+
+      .l-type_item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .lang {
+          display: inline-block;
+          font-size: vw(w, 19);
+          font-weight: 600;
+          background-color: rgba(142, 142, 142, 1);
+          border-radius: vw(w, 6);
+          color: #ffffff;
+          padding: vw(w, 5) vw(w, 18);
+        }
+
+        img {
+          object-fit: contain;
+        }
+
+        &.kr {
+          img {
+            width: vw(w, 432);
+            height: vw(w, 173);
+          }
+        }
+
+        &.en {
+          .lang {
+            margin-bottom: vw(w, 10);
+          }
+          img {
+            width: vw(w, 484);
+            height: vw(w, 153);
+          }
+        }
+
+      }
+
+    }
+
+    .l-grid {
+      margin-top: vw(w, 140);
+
+      .l-img {
+        margin: vw(w, -150) 0 vw(w, -100);
+      }
+      
+    }
+
+    .l-brand {
+
+      .l-img {
+        position: relative;
+        z-index: 1;
+        width: vw(w, 987);
+        margin: 0 auto;
+        margin-top: vw(w, 80);
+      }
+
+      .purple {
+        color: #5E00D7;
+        font-weight: 700;
+      }
+      
+    }
+
+    .l-character {
+      margin-top: vw(w, 260);
+      position: relative;
+
+      .character-desc {
+        position: absolute;
+        top: vw(w, 242);
+        left: 50%;
+        transform: translate(-50%, 0%);
+        z-index: 99;
+        text-align: center;
+        font-size: vw(w, 36);
+        font-weight: 700;
+        line-height: 1.2;
+      }
+
+      .l-video {
+        position: relative;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: vw(w, 400);
+          transform: translate(0, -100%);
+          background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
+        }
+      }
+
+    }
+
+  }
+
+
+  @include tablet {
+    padding: vw(t, 165) 0 0;
+
+    .l-head {
+      gap: vw(t, 30);
+
+      .title {
+        font-size: vw(t, 36);
+      }
+
+      .desc {
+        font-size: vw(t, 21);
+      }
+    }
+
+    .l-inner {
+
+      .l-type {
+        gap: vw(t, 28);
+        margin-top: vw(t, 128);
+
+        .l-type_item {
+          .lang {
+            font-size: vw(t, 19);
+            border-radius: vw(t, 6);
+            padding: vw(t, 5) vw(t, 18);
+          }
+
+          &.kr {
+            img {
+              width: vw(t, 432);
+              height: vw(t, 173);
+            }
+          }
+
+          &.en {
+            .lang {
+              margin-bottom: vw(t, 10);
+            }
+            img {
+              width: vw(t, 484);
+              height: vw(t, 153);
+            }
+          }
+
+        }
+
+      }
+
+      .l-grid {
+        margin-top: vw(t, 140);
+
+        .l-img {
+          margin: vw(t, -100) 0 vw(t, -100);
+          z-index: 0;
+        }
+        
+      }
+
+      .l-brand {
+        margin-top: vw(t, 100);
+
+        .l-img {
+          width: vw(t, 987);
+          margin-top: vw(t, 80);
+        }
+
+      }
+
+      .l-character {
+        margin-top: vw(t, 260);
+
+        .character-desc {
+          top: vw(t, 242);
+          font-size: vw(t, 36);
+        }
+        
+        .l-video {
+
+          &::before {
+            height: vw(t, 800);
+          }
+        }
+      }
+
+    }
+  }
+
+
+  @include mobile {
+
+    padding: vw(m, 100) 0 0;
+    background: url('/workout-v2/images/contents/bg_brand_type-mo.png') 100% / cover;
+
+    .brand-title {
+      width: 100%;
+      text-align: left;
+      margin-left: vw(m, 40);
+      font-size: max(24px, vw(w, 24));
+    }
+    .brand-desc {
+      width: calc(100% - vw(m, 80));
+      text-align: left;
+      font-size: max(14px, vw(m, 14));
+      line-height: 1.5;
+      margin: vw(m, 17) auto 0;
+    }
+
+
+
+    .l-head {
+      align-items: start;
+      text-align: left;
+      gap: vw(m, 18);
+      margin: 0 vw(m, 40);
+
+      .title {
+        font-size: max(24px, vw(w, 24));
+      }
+
+      .desc {
+        font-size: max(14px, vw(m, 14));
+      }
+    }
+
+    .l-inner {
+
+      .l-type {
+        flex-direction: column;
+        gap: vw(m, 18);
+        margin-top: vw(m, 40);
+
+        .l-type_item {
+          display: flex;
+          flex-direction: row;
+          align-items: start;
+          justify-content: start;
+          margin-left: vw(m, 40);
+
+          .lang {
+            font-size: max(10px, vw(w, 10));
+            border-radius: vw(m, 3);
+            padding: vw(m, 3) vw(m, 8);
+            margin-right: vw(m, 4);
+          }
+
+          &.kr {
+            img {
+              width: vw(m, 246);
+              height: vw(m, 100);
+            }
+          }
+
+          &.en {
+            .lang {
+              margin-bottom: 0;
+            }
+            img {
+              width: vw(m, 276);
+              height: vw(m, 88);
+            }
+          }
+        }
+
+      }
+
+      .l-grid {
+        margin-top: vw(m, 130);
+
+        .l-img {
+          margin: vw(m, -140) 0 vw(m, -100);
+          height: vw(m, 775);
+        }
+        
+      }
+
+      .l-brand {
+        margin-top: vw(m, 160);
+
+        .l-img {
+          width: calc(100% - vw(m, 60));
+          margin-top: vw(m, 40);
+        }
+
+      }
+
+      .l-character {
+        margin-top: 0;
+
+        .character-desc {
+          width: 100%;
+          top: vw(m, 175);
+          font-size: vw(m, 24);
+        }
+
+        .l-video {
+          // height: vw(m, 700);
+
+          &::before {
+            height: vw(m, 400);
+          }
+        }
+      }
+
+    }
+  }
+
+}

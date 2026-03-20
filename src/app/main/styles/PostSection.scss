@@ -1,0 +1,414 @@
+@use '@/app/styles/common/variables' as *;
+@use '@/app/styles/common/mixin' as *;
+
+.post-section{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100lvh;
+  min-height: vw(w, 800);
+  box-shadow: -4px 4px 11px rgba(0, 0, 0, 0.2);
+  @include tablet{
+    min-height: vw(t, 800);
+  }
+  @include mobile{
+    // height: auto;
+    // min-height: 0;
+    min-height: 830px;
+  }
+  &_container{
+    position: relative;
+    // left: -3.4%;
+    // display: flex;
+    // flex-direction: row-reverse;
+    // align-items: center;
+    // justify-content: space-between;
+    // // justify-content: center;
+    // // gap: vw(w, 400);
+    // max-width: vw(w, 1700);
+    // padding: 0 vw(w, 140);
+    // margin: 0 auto;
+    // height: 100%;
+    width: 100%; height: 100%;
+    z-index: 1;
+    // @include tablet{
+    //   max-width: none;
+    //   padding: 0 vw(t, 100);
+    //   left: 0;
+    // }
+    @include mobile{
+      display: block;
+      max-width: none;
+      margin: 0 auto;
+      height: 100%;
+      padding: 0 vw(m, 30);
+      // padding-top: vw(m, 110);
+      // padding-bottom: vw(m, 62);
+    }
+    // @include mobile{
+    //   padding: 110px 30px 62px 30px;
+    // }
+  }
+  &_left{
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // gap: vw(w, 74);
+
+    display: inline-block;
+    position: absolute;
+    right: 30%;
+    top: 50%;
+    transform: translate(50%, -50%);
+    // @include tablet{
+    //   gap: vw(t, 74);
+    // }
+    @include mobile{
+      position: static;
+      transform: none;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: vw(m, 27);
+    }
+    @include mobile{
+      gap: 27px;
+      height: 100%;
+    }
+    &_title{
+      @include mobile{
+        max-width: 341px;
+        width: 100%;
+        margin: 0 auto;
+      }
+      .heading{
+        @include mobile{
+          font-size: vw(m, 34);
+        }
+        @include mobile{
+          font-size: 34px;
+        }
+      }
+      .desc{
+        margin-top: vw(w, 20);
+        font-weight: 700;
+        @include tablet{
+          margin-top: vw(t, 20);
+        }
+        @include mobile{
+          font-size: vw(m, 16);
+          margin-top: vw(m, 20);
+          line-height: 1.5;
+        }
+        @include mobile{
+          font-size: 16px;
+          margin-top: 20px;
+          line-height: 1.5;
+        }
+      }
+      .desc2{
+        margin-top: vw(w, 12);
+        font-size: vw(w, 18);
+        @include tablet{
+          margin-top: vw(t, 12);
+          font-size: vw(t, 18);
+        }
+        @include mobile{
+          font-size: vw(m, 14);
+          margin-top: vw(m, 8);
+          line-height: 1.5;
+        }
+        @include mobile{
+          font-size: 14px;
+          margin-top: 8px;
+          line-height: 1.5;
+        }
+      }
+    }
+    .readmorebtn{
+      margin-top: vw(w, 40);
+      @include tablet{
+        margin-top: vw(t, 40);
+      }
+      @include mobile{
+        margin-top: vw(m, 13);
+      }
+      @include mobile{
+        margin-top: 13px;
+      }
+      button{
+        margin: 0;
+        @include mobile{
+          margin: 0 auto;
+        }
+      }
+    }
+    &_navigation{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: vw(w, 26);
+      @include tablet{
+        gap: vw(t, 26);
+      }
+      @include mobile{
+        gap: vw(m, 24);
+      }
+      @include mobile{
+        gap: 24px;
+      }
+    }
+    &_nav-item{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: vw(w, 10);
+      @include tablet{
+        gap: vw(t, 10);
+      }
+      @include mobile{
+        gap: vw(m, 13);
+      }
+      @include mobile{
+        gap: 13px;
+      }
+      .nav-button{
+        overflow: hidden;
+        font-family: $font-ls;
+        font-size: vw(w, 20);
+        font-weight: 400;
+        width: vw(w, 107);
+        height: vw(w, 107);
+        border-radius: 100%;
+        background: url('/workout-v2/images/contents/post_kv_button.png') no-repeat center center / contain;
+        @include tablet{
+          font-size: vw(t, 20);
+          width: vw(t, 107);
+          height: vw(t, 107);
+        }
+        @include mobile{
+          font-size: vw(m, 16);
+          width: vw(m, 86);
+          height: vw(m, 86);
+        }
+        @include mobile{
+          font-size: 16px;
+          width: 86px;
+          height: 86px;
+        }
+      }
+    }
+  }
+  &_right{
+    display: inline-block;
+    position: absolute;
+    right: 71.3%;
+    top: 50%;
+    transform: translate(50%, -50%);
+
+    @media screen and (max-width: 1200px) {
+      right: 72.4%;
+    }
+
+    @include mobile{
+      display: block;
+      position: static;
+      transform: none;
+      align-self: center;
+    }
+
+    &_hero{
+      position: relative;
+      width: vw(w, 524);
+      height: vw(w, 700);
+      box-shadow: -2px 4px 6px 2px rgb(0 0 0 / 30%);
+
+      @include tablet{
+        width: vw(t, 524);
+        height: vw(t, 700);
+      }
+      @include mobile{
+        max-width: 100%;
+        width: vw(m, 341);
+        height: vw(m, 453);
+      }
+      @include mobile{
+        width: 341px;
+        height: 453px;
+      }
+      .inner{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        // justify-content: center;
+        justify-content: space-between;
+        width: 100%; height: 100%;
+        flex-direction: column-reverse;
+        .data-center-wrapper{
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%; height: 80%;
+          padding: vw(w, 28);
+          // padding-bottom: 0;
+          padding-top: vw(w, 14);
+          height: 72.8%;
+          @include tablet{
+            padding: vw(t, 28);
+          }
+          @include mobile{
+            padding: vw(m, 18);
+            padding-top: 0;
+            height: 71%;
+          }
+          @include mobile{
+            padding: 0 18px 18px 18px;
+            height: 71%;
+          }
+          .texts{
+            position: absolute;
+            top: 55%; left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            display: none;
+            &_title{
+              font-family: $font-g;
+              font-size: vw(w, 28);
+              line-height: 1.2;
+              @include tablet{
+                font-size: vw(t, 28);
+              }
+            }
+            &_subtitle{
+              font-family: $font-g;
+              margin-top: vw(w, 33);
+              font-size: vw(w, 15);
+              @include tablet{
+                margin-top: vw(t, 33);
+                font-size: vw(t, 15);
+              }
+            }
+          }
+          .date{
+            display: none;
+          }
+          .bg_image{
+            width: 100%; height: 100%;
+          }
+        }
+        .data-text-wrapper{
+          position: relative;
+          width: 100%;
+          height: 25%;
+          color: #F6F4ED;
+          padding: vw(w, 28);
+          padding-bottom: 0;
+          @include mobile{
+            height: 30%;
+            padding: vw(m, 18);
+          }
+          @include mobile{
+            height: 30%;
+            padding: 18px;
+          }
+          .text01{
+            font-size: vw(w, 18);
+            margin-bottom: vw(w, 10);
+            @include mobile{
+              font-size: vw(m, 12);
+              margin-bottom: vw(m, 5);
+            }
+            @include mobile{
+              font-size: 12px;
+              margin-bottom: 5px;
+            }
+          }
+          .text02.month{
+            font-family: $font-a;
+            font-size: vw(w, 52);
+            color: #E5E2D2;
+            @include tablet{
+              font-size: vw(t, 72);
+            }
+            @include mobile{
+              font-size: vw(m, 34);
+            }
+            @include mobile{
+              font-size: 34px;
+            }
+          }
+          .text03{
+            font-family: $font-a;
+            font-size: vw(w, 27);
+            @include mobile{
+              font-size: vw(m, 18);
+            }
+            @include mobile{
+              font-size: 18px;
+            }
+          }
+          .text04{
+            margin-top: vw(w, 22);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            p{
+              font-size: vw(w, 20);
+              @include tablet{
+                font-size: vw(t, 20);
+              }
+              &:nth-child(2){
+                font-family: $font-g;
+              }
+              &.date{
+                font-family: $font-a;
+              }
+            }
+            .line{
+              width: 54%;
+              height: vw(w, 1);
+              background: #F6F4ED;
+              display: flex;
+              align-items: center;
+            }
+            @include mobile{
+              margin-top: vw(m, 13);
+              p{
+                font-size: vw(m, 13);
+              }
+              .line{
+                height: vw(m, 1);
+              }
+            }
+            @include mobile{
+              margin-top: 13px;
+              p{
+                font-size: 13px;
+              }
+              .line{
+                height: 1px;
+              }
+            }
+          }
+        }
+      }
+      .hero_bg_image{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -2;
+      }
+    }
+  }
+  &_bg{
+    width: 100%;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: -1;
+  }
+}

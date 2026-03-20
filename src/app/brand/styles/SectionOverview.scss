@@ -1,0 +1,232 @@
+@import "@/app/styles/common/_variables.scss";
+@import "@/app/styles/common/_mixin.scss";
+
+.section-overview {
+  
+  width: 100%;
+  height: vw(w, 1080);
+  overflow: hidden;
+  position: relative;
+
+  .section-overview_inner {
+    max-width: vw(w, 1595);
+    margin: vw(w, 375) auto;
+    padding: 0 vw(w, 30);
+
+    ol {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      li {
+        color: #000;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        
+        .num {
+          font-size: vw(w, 54);
+          font-weight: 700;
+          line-height: 1;
+          opacity: 0.2;
+        }
+
+        .title {
+          font-size: vw(w, 36);
+          font-weight: 700;
+          line-height: 1.2;
+          margin-top: vw(w, 118);
+        }
+
+        p.desc {
+          font-size: vw(w, 21);
+          line-height: 1.5;
+          margin-top: vw(w, 56);
+        }
+
+        &:nth-child(1) {
+          width: vw(w, 450);
+        }
+        &:nth-child(2) {
+          width: vw(w, 441);
+        }
+        &:nth-child(3) {
+          width: vw(w, 400);
+        }
+
+      }
+    }
+  }
+
+  .b-o_shape {
+    position: absolute;
+    animation: floatY 3s ease-in-out infinite;
+
+    &.shape {
+      &-1 {
+        width: vw(w, 752);
+        left: 0;
+        top: -5%;
+        animation-duration: 4s;
+      }
+      &-2 {
+        width: vw(w, 851);
+        right: 30%;
+        bottom: 0;
+        animation-duration: 3s;
+      }
+      &-3 {
+        width: vw(w, 747);
+        top: vw(w, 80);
+        right: 0;
+        animation-duration: 5s;
+      }
+
+    }
+  }
+
+  @keyframes floatY {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(5%); }
+    100% { transform: translateY(0); }
+  }
+
+
+  @include tablet {
+    height: vw(t, 1080);
+
+    .section-overview_inner {
+      max-width: vw(t, 1595);
+      margin: vw(t, 375) auto;
+      padding: 0 vw(t, 30);
+
+      ol {
+        
+        li {
+          .num {
+            font-size: vw(t, 54);
+          }
+
+          .title {
+            font-size: vw(t, 36);
+            margin-top: vw(t, 118);
+          }
+
+          p.desc {
+            font-size: vw(t, 21);
+            margin-top: vw(t, 56);
+          }
+
+          &:nth-child(1), &:nth-child(2), &:nth-child(3) {
+            width: vw(t, 340);
+          }
+
+        }
+        
+      }
+    }
+
+    .b-o_shape {
+
+      &.shape {
+        &-1 {
+          left: 0;
+          top: -5%;
+          animation-duration: 4s;
+        }
+        &-2 {
+          right: 30%;
+          bottom: 0;
+          animation-duration: 3s;
+        }
+        &-3 {
+          top: vw(w, 80);
+          right: 0;
+          animation-duration: 5s;
+        }
+
+      }
+    }
+  }
+
+
+  @include mobile {
+    height: auto;
+
+    .section-overview_inner {
+      max-width: 100%;
+      margin: vw(m, 180) auto;
+      padding: 0 vw(m, 40);
+
+      ol {
+        flex-direction: column;
+        gap: vw(m, 215);
+
+        li {
+          position: relative;
+
+          .num {
+            position: absolute;
+            right: 0;
+            top: vw(m, -5);
+            font-size: max(45px, vw(m, 45));
+            opacity: 0.6;
+          }
+
+          .title {
+            font-size: max(24px, vw(m, 24));
+            margin-top: 0;
+          }
+
+          p.desc {
+            font-size: max(14px, vw(m, 14));
+            margin-top: vw(m, 20);
+          }
+
+          &:nth-child(1), &:nth-child(2), &:nth-child(3) {
+            width: 100%;
+          }
+
+          &:nth-child(2) {
+            .num {
+              left: 0;
+            }
+
+            .title, p.desc {
+              text-align: right;
+            }
+          }
+
+        }
+        
+      }
+    }
+
+    .b-o_shape {
+      z-index: 0;
+
+      &.shape {
+        &-1 {
+          width: vw(m, 250);
+          left: auto;
+          right: 0;
+          top: vw(m, -5);
+        }
+        &-2 {
+          width: vw(m, 150);
+          right: auto;
+          left: 0;
+          bottom: 45%;
+        }
+        &-3 {
+          width: vw(m, 350);
+          top: 45%;
+          right: 0;
+        }
+
+      }
+    }
+  }
+
+}

@@ -1,0 +1,71 @@
+@import "@/app/styles/common/_variables.scss";
+@import "@/app/styles/common/_mixin.scss";
+
+.section-core {
+  position: relative;
+
+  .section-shape-swiper-inner {
+    background: url('/workout-v2/images/contents/bg_brand_core-pc.png') 100% / cover;
+  }
+
+  .shape {
+    &.shape-1 {
+      top: -3%;
+      left: 0;
+      width: vw(w, 900);
+      height: vw(w, 650);
+      animation: floatY 4s ease-in-out infinite;
+    }
+    &.shape-2 {
+      bottom: 0;
+      right: 0;
+      width: vw(w, 1100);
+      height: vw(w, 500);
+      animation: floatY 5s ease-out infinite;
+    }
+  }
+
+  @keyframes floatY {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(5%); }
+    100% { transform: translateY(0); }
+  }
+
+  @include tablet {
+      .shape {
+        &.shape-1 {
+          width: vw(t, 900);
+          height: vw(t, 650);
+        }
+        &.shape-2 {
+          width: vw(t, 1100);
+          height: vw(t, 500);
+        }
+      }
+  }
+
+
+  @include mobile {
+    .section-shape-swiper-inner {
+      background-image: url('/workout-v2/images/contents/bg_brand_core-mo.png');
+      background-size: cover;
+      background-repeat: no-repeat;  /* 반복 방지 */
+      background-position: center;   /* 가운데 정렬 */
+    }
+
+    .shape {
+      &.shape-1 {
+        left: 0;
+        width: vw(m, 200);
+        height: vw(m, 300);
+      }
+      &.shape-2 {
+        bottom: 0;
+        right: 0;
+        width: vw(m, 430);
+        height: vw(m, 300);
+      }
+    }
+  }
+
+}

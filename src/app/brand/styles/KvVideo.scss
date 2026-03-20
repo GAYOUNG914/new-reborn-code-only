@@ -1,0 +1,264 @@
+@import "@/app/styles/common/_variables.scss";
+@import "@/app/styles/common/_mixin.scss";
+
+.kv-video{
+  aspect-ratio: 1109 / 619;
+  width: vw(w, 1109);
+  height: vw(w, 619);
+  padding: 0 vw(w, 100);
+  box-sizing: content-box;
+  @include tablet{
+    width: vw(t, 1030);
+    height: vw(t, 550);
+    padding: 0 vw(t, 40);
+  }
+  @include mobile{
+    aspect-ratio: 400 / 225;
+    width: 100%;
+    min-height: vw(m, 225);
+    padding: 0;
+  }
+  .vid-bg-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 99.9%;
+    // height: 100%;
+    z-index: -1;
+  }
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+  }
+  video {
+    width: 100%;
+  }
+  
+  .thumbnail-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    
+    .thumbnail-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .thumbnail-play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      cursor: pointer;
+    }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .mute-button{
+    position: absolute;
+    bottom: vw(w, 50);
+    right: vw(w, 50);
+    width: vw(w, 50);
+    height: vw(w, 50);
+    // animation: fadein 1s ease-in-out;
+    @include tablet{
+      bottom: vw(t, 50);
+      right: vw(t, 50);
+      width: vw(t, 50);
+      height: vw(t, 50);
+    }
+    @include mobile{
+      bottom: vw(m, 10);
+      right: vw(m, 10);
+      width: vw(m, 30);
+      height: vw(m, 30);
+    }
+    @keyframes fadein {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  }
+  
+  .replay-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    .text{
+      font-size: vw(w, 48);
+      font-weight: 700;
+      line-height: 1.2;
+      text-align: center;
+      margin-bottom: vw(w, 48);
+      @include tablet{
+        font-size: vw(t, 48);
+        margin-bottom: vw(t, 48);
+      }
+      @include mobile{
+        font-size: vw(m, 34);
+        margin-bottom: vw(m, 28);
+      }
+    }
+    .bottom{
+      position: absolute;
+      bottom: vw(w, 33);
+      @include tablet{
+        bottom: vw(t, 33);
+      }
+      @include mobile{
+        bottom: vw(m, 10);
+      }
+      img{
+        width: vw(w, 189);
+        height: vw(w, 36);
+        object-fit: contain;
+        text-align: center;
+        @include tablet{
+          width: vw(t, 189);
+          height: vw(t, 36);
+        }
+        @include mobile{
+          width: vw(m, 113);
+          height: vw(m, 22);
+        }
+      }
+    }
+  }
+  
+  .replay-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: vw(w, 18) vw(w, 44);
+    background: #fff;
+    color: #1e1e1e;
+    border: none;
+    border-radius: vw(w,175);
+    cursor: pointer;
+    font-size: vw(w, 21);
+    font-weight: 700;
+    @include tablet{
+      padding: vw(t, 18) vw(t, 44);
+      border-radius: vw(t, 175);
+      font-size: vw(t, 21);
+    }
+    @include mobile{
+      padding: vw(m, 12) vw(m, 30);
+      border-radius: vw(m, 120);
+      font-size: vw(m, 14);
+    }
+    &:before{
+      content: '';
+      display: inline-block;
+      background: url('/workout-v2/images/icons/icon_play.png') no-repeat center center / contain;
+      width: vw(w, 20);
+      height: vw(w, 20);
+      margin-right: vw(w, 12);
+      @include tablet{
+        width: vw(t, 20);
+        height: vw(t, 20);
+        margin-right: vw(t, 12);
+      }
+      @include mobile{
+        width: vw(m, 14);
+        height: vw(m, 14);
+        margin-right: vw(m, 8);
+      }
+    }
+  }
+  
+  // 테스트용임
+  .test-controls {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    button {
+      padding: 8px 16px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      
+      &:hover {
+        background: #0056b3;
+      }
+    }
+    .quality-selector {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      
+      select {
+        padding: 5px;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+      }
+    }
+    
+    .error {
+      background: #f8d7da;
+      color: #721c24;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 10px;
+      display: none;
+      
+      &.show {
+        display: block;
+      }
+    }
+    
+    .status {
+      margin-top: 10px;
+      padding: 10px;
+      background: #d4edda;
+      color: #155724;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+  }
+  .play-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(0, 123, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    margin: 0 auto 15px;
+    transition: all 0.3s ease;
+    @include tablet{
+      width: vw(t, 80);
+      height: vw(t, 80);
+    }
+    
+    &:hover {
+      background: rgba(0, 123, 255, 1);
+      transform: scale(1.1);
+    }
+  }
+}

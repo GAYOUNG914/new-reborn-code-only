@@ -1,0 +1,40 @@
+@import "@/app/styles/common/_variables.scss";
+@import "@/app/styles/common/_mixin.scss";
+
+.brand-title {
+
+  font-family: "GmarketSans";
+  font-size: vw(w, 51);
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -0.15rem;
+  margin-bottom: vw(w, 20);
+  text-align: center;
+  // transform: translateX(-50%);
+  left: 50%;
+
+  @include tablet {
+    font-size: vw(t, 51);
+  }
+
+  @include mobile {
+    font-size: max(24px, vw(m, 24));
+  }
+}
+
+.brand-desc {
+  font-size: vw(w, 24);
+  line-height: 1.2;
+  color: rgba(183, 183, 183, 1);
+  text-align: center;
+  margin-top: vw(w, 38);
+  // transform: translateX(-50%);
+
+  @include tablet {
+    font-size: vw(t, 24);
+  }
+
+  @include mobile {
+    font-size: max(16px, vw(m, 16));
+  }
+}

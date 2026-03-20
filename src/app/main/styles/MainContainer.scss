@@ -1,0 +1,26 @@
+@import "@/app/styles/common/_variables.scss";
+@import "@/app/styles/common/_mixin.scss";
+
+// 올리기 전 해당 코드 꼭 없애기
+// .dsxxeF{width: auto !important;}
+
+.main{
+}
+
+.btn-readmore{
+  @include mobile {
+    border-radius: 40px;
+    padding: 12px 27px;
+    gap: 8px;
+  
+    .text {
+      font-size: 14px;
+    }
+  
+    .icon {
+      width: 10px;
+      height: 5px;
+    }
+  
+  }
+}
